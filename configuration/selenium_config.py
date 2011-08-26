@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 server_address = "devconnect304.dev.lwi.com"
 server_port= 4444
 browser = "*chrome"

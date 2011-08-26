@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 """
+Copyright (c) 2011 Costa Halicea Mihajlov
 An enhaced GUI runner with tight integration with testlink via testlinkrpc API, derived from 
 Jonella Michaylov's enhanced GUI test runner.
 Copyright (c) 2011 Costa Halicea Mihajlov

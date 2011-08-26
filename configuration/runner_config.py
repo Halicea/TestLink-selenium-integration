@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import os
 #IMPORTANT: DO NOT CHANGE THE PROJECT_PATH VARIABLE
 PROJECT_PATH = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
