@@ -1,0 +1,2125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<testplan id="30851">
+		<name><![CDATA[Main - regression]]></name>
+		
+	<testproject>		<name><![CDATA[LifeWatch Connect]]></name>		<internal_id><![CDATA[1]]></internal_id>
+	</testproject>
+		
+	<platform>		<name><![CDATA[Chrome]]></name>		<internal_id><![CDATA[11]]></internal_id>
+	</platform>
+		
+	<build>		<name><![CDATA[20110518.1]]></name>		<internal_id><![CDATA[207]]></internal_id>
+	</build>
+		<testsuites>
+	<testsuite name="Enrollments" >
+		<node_order><![CDATA[6]]></node_order>
+		<details><![CDATA[]]>
+		</details>
+	<testsuite name="Enrollment Forms" >
+		<node_order><![CDATA[2]]></node_order>
+		<details><![CDATA[]]>
+		</details>
+	<testsuite name="ACT" >
+		<node_order><![CDATA[1]]></node_order>
+		<details><![CDATA[]]>
+		</details>
+	<testsuite name="ACT/Office hookup" >
+		<node_order><![CDATA[1]]></node_order>
+		<details><![CDATA[]]>
+		</details>
+	<testsuite name="Verify Enrollment Draft - Back and Next pages navigation" >
+		<node_order><![CDATA[0]]></node_order>
+		<details><![CDATA[]]>
+		</details>
+<testcase internalid="14689" name="ACT/Office hookup - Patient has Primary and Secondary Insurance">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[827]]></externalid>
+	<version><![CDATA[5]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>Log in to LWC, navigate to Enrollments - ACT/Arrhythmia enrollment</p>]]></actions>
+	<expectedresults><![CDATA[<p>System navigates the user to page 1 of ACT/Arrhythmia form</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>Select 'Office Hookup' radio button out of offered two, and press Next button</p>]]></actions>
+	<expectedresults><![CDATA[<p>User is navigated to page 2</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[3]]></step_number>
+	<actions><![CDATA[<p>popuate all mandatory data for patients information and press 'next' button</p>]]></actions>
+	<expectedresults><![CDATA[<p>user is navigated to next page</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[4]]></step_number>
+	<actions><![CDATA[<p>Try to go backwards and press 'back' button</p>]]></actions>
+	<expectedresults><![CDATA[<p>user is navigated to previous page 2</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[5]]></step_number>
+	<actions><![CDATA[<p>Go next, populate all mandatory data where  'LifeStar ACT' is selected for 'Type' and press 'Next'</p>]]></actions>
+	<expectedresults><![CDATA[<p>user is navigated to next page 'Primary Insurance Information'</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[6]]></step_number>
+	<actions><![CDATA[<p>Enter some data and check in '<span class="iefixlabel">Secondary Insurance Carrier exists</span>' and press 'next'</p>]]></actions>
+	<expectedresults><![CDATA[<p>user is navigated to 'Secondary Insurance Information' page</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[7]]></step_number>
+	<actions><![CDATA[<p>Enter some data and press 'Next'</p>]]></actions>
+	<expectedresults><![CDATA[<p>user is navigated to 'Physician Certification of Medical Necessity'  page</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[8]]></step_number>
+	<actions><![CDATA[<p>Enter data and press 'Next'</p>]]></actions>
+	<expectedresults><![CDATA[<p>user is navigated to summary page</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[9]]></step_number>
+	<actions><![CDATA[<p>Press 'Save enrollment draft'</p>]]></actions>
+	<expectedresults><![CDATA[<p>message pops up verifying draft is created</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[10]]></step_number>
+	<actions><![CDATA[<p>press OK</p>]]></actions>
+	<expectedresults><![CDATA[<p>enrollment draft is created with success and user is navigated to enrollment queue page</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[11]]></step_number>
+	<actions><![CDATA[<p>search for the form created in step 9 and open it</p>]]></actions>
+	<expectedresults><![CDATA[<p>form is opened on summary page</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[12]]></step_number>
+	<actions><![CDATA[<p>go back 'till first page</p>]]></actions>
+	<expectedresults><![CDATA[<p>user is navigated to page1, while all pages that were populated wih data are displaying in retrospective: 'Physician Certification of Medical Necessity' page, Sec.Ins.Info page, Prim.Ins.Info page,page 3, page 2, page 1</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[13]]></step_number>
+	<actions><![CDATA[<p>go next till last page</p>]]></actions>
+	<expectedresults><![CDATA[<p>user is navigated to summary page going through following pages: page 2, page 3, Prim.Ins.Info, Sec..Ins.Info, 'Physician Certification of Medical Necessity'.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<keywords><keyword name="regression - bugfix"><notes><![CDATA[
+
+]]></notes></keyword>
+</keywords></testcase>
+</testsuite>
+	<testsuite name="ACT/Office Hookup - Verify Submit" >
+		<node_order><![CDATA[1]]></node_order>
+		<details><![CDATA[]]>
+		</details>
+<testcase internalid="25213" name="ACT/Office hookup - New">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[1309]]></externalid>
+	<version><![CDATA[4]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>Log in to LWC and navigate to ACT/Arrhythmia enrollment</p>]]></actions>
+	<expectedresults><![CDATA[<p>user is navigated to ACT form</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>On first page check in 'Office Hookup' button and press next</p>]]></actions>
+	<expectedresults><![CDATA[<p>'Office Hookup' is selected and user is navigated to next page</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[3]]></step_number>
+	<actions><![CDATA[<p>On second page besides all mandatory data, enter unique SSN<br />
+&nbsp;</p>]]></actions>
+	<expectedresults><![CDATA[<p>unique SSN is entered</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[4]]></step_number>
+	<actions><![CDATA[<p>proceed to the last page and press 'Submit enrollment'</p>]]></actions>
+	<expectedresults><![CDATA[<p>message pops up notifying that new forms has been submitted</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[5]]></step_number>
+	<actions><![CDATA[<p>Press OK</p>]]></actions>
+	<expectedresults><![CDATA[<p>User is navigated to enrollment queue page and email is sent to user account</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[6]]></step_number>
+	<actions><![CDATA[<p>serach for the form created in step 3</p>]]></actions>
+	<expectedresults><![CDATA[<p>form opens on summary page</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[7]]></step_number>
+	<actions><![CDATA[<p>observe first section on the page</p>]]></actions>
+	<expectedresults><![CDATA[<p>in the first section of the page, '                                                              Lifewatch Patient Enrollment Form ACT' and&nbsp; 'Office Hookup' display</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[8]]></step_number>
+	<actions><![CDATA[<p>Open the users account, verify the body email</p>]]></actions>
+	<expectedresults><![CDATA[<p>In the first section 'New Enrollment' is visible.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<keywords><keyword name="regression - bugfix"><notes><![CDATA[
+
+]]></notes></keyword>
+</keywords></testcase>
+</testsuite></testsuite></testsuite>
+	<testsuite name="ARR" >
+		<node_order><![CDATA[2]]></node_order>
+		<details><![CDATA[]]>
+		</details>
+	<testsuite name="ARR/Office hookup - Verify Submit" >
+		<node_order><![CDATA[2]]></node_order>
+		<details><![CDATA[]]>
+		</details>
+<testcase internalid="25568" name="ARR/Office Hookup - New">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[1319]]></externalid>
+	<version><![CDATA[4]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>Log in to LWC and navigate to ACT/Arrhythmia enrollment</p>]]></actions>
+	<expectedresults><![CDATA[<p>user is navigated to ARR form</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>On first page check in 'Office Hookup' button and press next</p>]]></actions>
+	<expectedresults><![CDATA[<p>'Office Hookup' is selected and user is navigated to next page</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[3]]></step_number>
+	<actions><![CDATA[<p>On second page besides all mandatory data, enter unique SSN<br />
+&nbsp;</p>]]></actions>
+	<expectedresults><![CDATA[<p>unique SSN is entered</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[4]]></step_number>
+	<actions><![CDATA[<p>proceed to the last page and press 'Submit enrollment'</p>]]></actions>
+	<expectedresults><![CDATA[<p>message pops up notifying that new forms has been submitted</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[5]]></step_number>
+	<actions><![CDATA[<p>Press OK</p>]]></actions>
+	<expectedresults><![CDATA[<p>User is navigated to enrollment queue page and email is sent to user account</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[6]]></step_number>
+	<actions><![CDATA[<p>serach for the form created in step 3</p>]]></actions>
+	<expectedresults><![CDATA[<p>form opens on summary page</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[7]]></step_number>
+	<actions><![CDATA[<p>observe first section on the page</p>]]></actions>
+	<expectedresults><![CDATA[<p>in the first section of the page, '                                                              Lifewatch Patient Enrollment Form Arrhythmia' and&nbsp; 'Office Hookup' display</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[8]]></step_number>
+	<actions><![CDATA[<p>Open the users account, verify the body email</p>]]></actions>
+	<expectedresults><![CDATA[<p>In the first section 'New Enrollment' is visible.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<keywords><keyword name="regression - bugfix"><notes><![CDATA[
+
+]]></notes></keyword>
+</keywords></testcase>
+</testsuite></testsuite>
+	<testsuite name="ACTEx" >
+		<node_order><![CDATA[3]]></node_order>
+		<details><![CDATA[]]>
+		</details>
+	<testsuite name="ACTEx/GUI Validation" >
+		<node_order><![CDATA[0]]></node_order>
+		<details><![CDATA[]]>
+		</details>
+<testcase internalid="21556" name="ACTEX/GUI Verification - last page/Summary page">
+	<node_order><![CDATA[7]]></node_order>
+	<externalid><![CDATA[1261]]></externalid>
+	<version><![CDATA[4]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>Log in to LWC and navigate to Enrollments - 'ACT Ex Enrollment'</p>]]></actions>
+	<expectedresults><![CDATA[<p>User is navigated to 'ACT Ex Enrollment' enrollment form &nbsp;<br />
+&nbsp;</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>Enter mandatory fields on all pages, proceed to last page and verify sections and buttons.</p>]]></actions>
+	<expectedresults><![CDATA[<p>User is navigated to summary page where are five buttons on the bottom of the page: Back, Print, Save Enrollment Draft, Cancel, Submit Enrollment.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[3]]></step_number>
+	<actions><![CDATA[<p>Verify first section data</p>]]></actions>
+	<expectedresults><![CDATA[<p>All that display within first panel is: title '<!--[if gte mso 9]><xml>
+<o:OfficeDocumentSettings>
+<o:RelyOnVML />
+<o:AllowPNG />
+</o:OfficeDocumentSettings>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<w:WordDocument>
+<w:View>Normal</w:View>
+<w:Zoom>0</w:Zoom>
+<w:TrackMoves />
+<w:TrackFormatting />
+<w:PunctuationKerning />
+<w:ValidateAgainstSchemas />
+<w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+<w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+<w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+<w:DoNotPromoteQF />
+<w:LidThemeOther>EN-US</w:LidThemeOther>
+<w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+<w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+<w:Compatibility>
+<w:BreakWrappedTables />
+<w:SnapToGridInCell />
+<w:WrapTextWithPunct />
+<w:UseAsianBreakRules />
+<w:DontGrowAutofit />
+<w:SplitPgBreakAndParaMark />
+<w:DontVertAlignCellWithSp />
+<w:DontBreakConstrainedForcedTables />
+<w:DontVertAlignInTxbx />
+<w:Word11KerningPairs />
+<w:CachedColBalance />
+</w:Compatibility>
+<m:mathPr>
+<m:mathFont m:val="Cambria Math" />
+<m:brkBin m:val="before" />
+<m:brkBinSub m:val="&#45;-" />
+<m:smallFrac m:val="off" />
+<m:dispDef />
+<m:lMargin m:val="0" />
+<m:rMargin m:val="0" />
+<m:defJc m:val="centerGroup" />
+<m:wrapIndent m:val="1440" />
+<m:intLim m:val="subSup" />
+<m:naryLim m:val="undOvr" />
+</m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+LatentStyleCount="267">
+<w:LsdException Locked="false" Priority="0" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Normal" />
+<w:LsdException Locked="false" Priority="9" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="heading 1" />
+<w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 2" />
+<w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 3" />
+<w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4" />
+<w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5" />
+<w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6" />
+<w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7" />
+<w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8" />
+<w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9" />
+<w:LsdException Locked="false" Priority="39" Name="toc 1" />
+<w:LsdException Locked="false" Priority="39" Name="toc 2" />
+<w:LsdException Locked="false" Priority="39" Name="toc 3" />
+<w:LsdException Locked="false" Priority="39" Name="toc 4" />
+<w:LsdException Locked="false" Priority="39" Name="toc 5" />
+<w:LsdException Locked="false" Priority="39" Name="toc 6" />
+<w:LsdException Locked="false" Priority="39" Name="toc 7" />
+<w:LsdException Locked="false" Priority="39" Name="toc 8" />
+<w:LsdException Locked="false" Priority="39" Name="toc 9" />
+<w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption" />
+<w:LsdException Locked="false" Priority="10" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Title" />
+<w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font" />
+<w:LsdException Locked="false" Priority="11" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Subtitle" />
+<w:LsdException Locked="false" Priority="22" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Strong" />
+<w:LsdException Locked="false" Priority="20" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Emphasis" />
+<w:LsdException Locked="false" Priority="59" SemiHidden="false"
+UnhideWhenUsed="false" Name="Table Grid" />
+<w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text" />
+<w:LsdException Locked="false" Priority="1" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="No Spacing" />
+<w:LsdException Locked="false" Priority="60" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Shading" />
+<w:LsdException Locked="false" Priority="61" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light List" />
+<w:LsdException Locked="false" Priority="62" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Grid" />
+<w:LsdException Locked="false" Priority="63" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 1" />
+<w:LsdException Locked="false" Priority="64" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 2" />
+<w:LsdException Locked="false" Priority="65" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 1" />
+<w:LsdException Locked="false" Priority="66" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 2" />
+<w:LsdException Locked="false" Priority="67" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 1" />
+<w:LsdException Locked="false" Priority="68" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 2" />
+<w:LsdException Locked="false" Priority="69" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 3" />
+<w:LsdException Locked="false" Priority="70" SemiHidden="false"
+UnhideWhenUsed="false" Name="Dark List" />
+<w:LsdException Locked="false" Priority="71" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Shading" />
+<w:LsdException Locked="false" Priority="72" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful List" />
+<w:LsdException Locked="false" Priority="73" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Grid" />
+<w:LsdException Locked="false" Priority="60" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Shading Accent 1" />
+<w:LsdException Locked="false" Priority="61" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light List Accent 1" />
+<w:LsdException Locked="false" Priority="62" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Grid Accent 1" />
+<w:LsdException Locked="false" Priority="63" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1" />
+<w:LsdException Locked="false" Priority="64" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1" />
+<w:LsdException Locked="false" Priority="65" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 1 Accent 1" />
+<w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision" />
+<w:LsdException Locked="false" Priority="34" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="List Paragraph" />
+<w:LsdException Locked="false" Priority="29" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Quote" />
+<w:LsdException Locked="false" Priority="30" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Intense Quote" />
+<w:LsdException Locked="false" Priority="66" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 2 Accent 1" />
+<w:LsdException Locked="false" Priority="67" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1" />
+<w:LsdException Locked="false" Priority="68" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1" />
+<w:LsdException Locked="false" Priority="69" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1" />
+<w:LsdException Locked="false" Priority="70" SemiHidden="false"
+UnhideWhenUsed="false" Name="Dark List Accent 1" />
+<w:LsdException Locked="false" Priority="71" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Shading Accent 1" />
+<w:LsdException Locked="false" Priority="72" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful List Accent 1" />
+<w:LsdException Locked="false" Priority="73" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Grid Accent 1" />
+<w:LsdException Locked="false" Priority="60" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Shading Accent 2" />
+<w:LsdException Locked="false" Priority="61" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light List Accent 2" />
+<w:LsdException Locked="false" Priority="62" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Grid Accent 2" />
+<w:LsdException Locked="false" Priority="63" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2" />
+<w:LsdException Locked="false" Priority="64" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2" />
+<w:LsdException Locked="false" Priority="65" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 1 Accent 2" />
+<w:LsdException Locked="false" Priority="66" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 2 Accent 2" />
+<w:LsdException Locked="false" Priority="67" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2" />
+<w:LsdException Locked="false" Priority="68" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2" />
+<w:LsdException Locked="false" Priority="69" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2" />
+<w:LsdException Locked="false" Priority="70" SemiHidden="false"
+UnhideWhenUsed="false" Name="Dark List Accent 2" />
+<w:LsdException Locked="false" Priority="71" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Shading Accent 2" />
+<w:LsdException Locked="false" Priority="72" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful List Accent 2" />
+<w:LsdException Locked="false" Priority="73" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Grid Accent 2" />
+<w:LsdException Locked="false" Priority="60" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Shading Accent 3" />
+<w:LsdException Locked="false" Priority="61" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light List Accent 3" />
+<w:LsdException Locked="false" Priority="62" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Grid Accent 3" />
+<w:LsdException Locked="false" Priority="63" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3" />
+<w:LsdException Locked="false" Priority="64" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3" />
+<w:LsdException Locked="false" Priority="65" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 1 Accent 3" />
+<w:LsdException Locked="false" Priority="66" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 2 Accent 3" />
+<w:LsdException Locked="false" Priority="67" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3" />
+<w:LsdException Locked="false" Priority="68" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3" />
+<w:LsdException Locked="false" Priority="69" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3" />
+<w:LsdException Locked="false" Priority="70" SemiHidden="false"
+UnhideWhenUsed="false" Name="Dark List Accent 3" />
+<w:LsdException Locked="false" Priority="71" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Shading Accent 3" />
+<w:LsdException Locked="false" Priority="72" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful List Accent 3" />
+<w:LsdException Locked="false" Priority="73" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Grid Accent 3" />
+<w:LsdException Locked="false" Priority="60" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Shading Accent 4" />
+<w:LsdException Locked="false" Priority="61" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light List Accent 4" />
+<w:LsdException Locked="false" Priority="62" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Grid Accent 4" />
+<w:LsdException Locked="false" Priority="63" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4" />
+<w:LsdException Locked="false" Priority="64" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4" />
+<w:LsdException Locked="false" Priority="65" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 1 Accent 4" />
+<w:LsdException Locked="false" Priority="66" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 2 Accent 4" />
+<w:LsdException Locked="false" Priority="67" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4" />
+<w:LsdException Locked="false" Priority="68" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4" />
+<w:LsdException Locked="false" Priority="69" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4" />
+<w:LsdException Locked="false" Priority="70" SemiHidden="false"
+UnhideWhenUsed="false" Name="Dark List Accent 4" />
+<w:LsdException Locked="false" Priority="71" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Shading Accent 4" />
+<w:LsdException Locked="false" Priority="72" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful List Accent 4" />
+<w:LsdException Locked="false" Priority="73" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Grid Accent 4" />
+<w:LsdException Locked="false" Priority="60" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Shading Accent 5" />
+<w:LsdException Locked="false" Priority="61" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light List Accent 5" />
+<w:LsdException Locked="false" Priority="62" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Grid Accent 5" />
+<w:LsdException Locked="false" Priority="63" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5" />
+<w:LsdException Locked="false" Priority="64" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5" />
+<w:LsdException Locked="false" Priority="65" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 1 Accent 5" />
+<w:LsdException Locked="false" Priority="66" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 2 Accent 5" />
+<w:LsdException Locked="false" Priority="67" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5" />
+<w:LsdException Locked="false" Priority="68" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5" />
+<w:LsdException Locked="false" Priority="69" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5" />
+<w:LsdException Locked="false" Priority="70" SemiHidden="false"
+UnhideWhenUsed="false" Name="Dark List Accent 5" />
+<w:LsdException Locked="false" Priority="71" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Shading Accent 5" />
+<w:LsdException Locked="false" Priority="72" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful List Accent 5" />
+<w:LsdException Locked="false" Priority="73" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Grid Accent 5" />
+<w:LsdException Locked="false" Priority="60" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Shading Accent 6" />
+<w:LsdException Locked="false" Priority="61" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light List Accent 6" />
+<w:LsdException Locked="false" Priority="62" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Grid Accent 6" />
+<w:LsdException Locked="false" Priority="63" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6" />
+<w:LsdException Locked="false" Priority="64" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6" />
+<w:LsdException Locked="false" Priority="65" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 1 Accent 6" />
+<w:LsdException Locked="false" Priority="66" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 2 Accent 6" />
+<w:LsdException Locked="false" Priority="67" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6" />
+<w:LsdException Locked="false" Priority="68" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6" />
+<w:LsdException Locked="false" Priority="69" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6" />
+<w:LsdException Locked="false" Priority="70" SemiHidden="false"
+UnhideWhenUsed="false" Name="Dark List Accent 6" />
+<w:LsdException Locked="false" Priority="71" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Shading Accent 6" />
+<w:LsdException Locked="false" Priority="72" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful List Accent 6" />
+<w:LsdException Locked="false" Priority="73" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Grid Accent 6" />
+<w:LsdException Locked="false" Priority="19" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis" />
+<w:LsdException Locked="false" Priority="21" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis" />
+<w:LsdException Locked="false" Priority="31" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference" />
+<w:LsdException Locked="false" Priority="32" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Intense Reference" />
+<w:LsdException Locked="false" Priority="33" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Book Title" />
+<w:LsdException Locked="false" Priority="37" Name="Bibliography" />
+<w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading" />
+</w:LatentStyles>
+</xml><![endif]--><!--[if gte mso 10]>
+<style>
+/* Style Definitions */
+table.MsoNormalTable
+{mso-style-name:"Table Normal";
+mso-tstyle-rowband-size:0;
+mso-tstyle-colband-size:0;
+mso-style-noshow:yes;
+mso-style-priority:99;
+mso-style-qformat:yes;
+mso-style-parent:"";
+mso-padding-alt:0in 5.4pt 0in 5.4pt;
+mso-para-margin:0in;
+mso-para-margin-bottom:.0001pt;
+mso-pagination:widow-orphan;
+font-size:10.0pt;
+font-family:"Calibri","sans-serif";
+mso-bidi-font-family:"Times New Roman";}
+</style>
+<![endif]--><span style=""><span style=""><span style="font: 7pt &quot;Times New Roman&quot;;">&nbsp;</span></span></span>Lifewatch Patient Enrollment Form (ACT Ex)                                                                                           '.</p>
+<p>On the left are: Phone (800) 700-3788 and 'Submitted By: user (username) username@lifewatch.com'.</p>
+<p>On the right are: Fax (800) 260-8023 and 'The first device order is a: Office Hookup (or Send to Patient)'<br />
+&nbsp;</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[4]]></step_number>
+	<actions><![CDATA[<p>Verify that second panel include clinic and doctor information</p>]]></actions>
+	<expectedresults><![CDATA[<p>Clinic and doctor labels and names are displayed.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[5]]></step_number>
+	<actions><![CDATA[<p>Verify the third page content</p>]]></actions>
+	<expectedresults><![CDATA[<p>PCP Referring Physician When Applicable, PCP Referring Physician Phone # and checkbox 'Call PCP for MD Notification' are displayed</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[6]]></step_number>
+	<actions><![CDATA[<p>Verify that fourth panel include patient information</p>]]></actions>
+	<expectedresults><![CDATA[<p>This panel is labeled 'Patient Information' and all information that was entered for the patient display, excluding those fields that was not entered any data for.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[7]]></step_number>
+	<actions><![CDATA[<p>Verify that fourth panel show shipping information, in case the user created 'Send to Patient' form</p>]]></actions>
+	<expectedresults><![CDATA[<p>This panel is labeled 'Shipping information'.</p>
+<p>Date that display within is: checked-in checkbox: 'Shipping Address is Same as Home Address' OR&nbsp;all data that was entered manually, excluding the chechbox mentioned above.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[8]]></step_number>
+	<actions><![CDATA[<p>Veriry that previous panel is not displayed if user created 'office Hookup' form</p>]]></actions>
+	<expectedresults><![CDATA[<p>It is verified.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[9]]></step_number>
+	<actions><![CDATA[<p>Verify the next section contain only reminder.</p>]]></actions>
+	<expectedresults><![CDATA[<p><strong>Reminder</strong>: it is the provider's responsibility to select codes carried out to the highest level of specificity and selected from the ICD-9-CM code book appropriate to the year in which the service is rendered for the claim(s) submitted</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[10]]></step_number>
+	<actions><![CDATA[<p>Verify the next section contain Monitor Hook-Up Information</p>]]></actions>
+	<expectedresults><![CDATA[<p>Data that was entered previosly is displayed.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[11]]></step_number>
+	<actions><![CDATA[<p>Verify the next section contain information about primary insurance.</p>
+<p>Note that&nbsp; this panel is on the summary page only if user has primary insurance.</p>]]></actions>
+	<expectedresults><![CDATA[<p>This panel is labeled 'Primary Insurance Information:' and display only data that was entered.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[12]]></step_number>
+	<actions><![CDATA[<p>Verify the next section contain information about secondary insurance.</p>
+<p>Note that&nbsp; this panel is on the summary page only if user has secondary insurance.</p>]]></actions>
+	<expectedresults><![CDATA[<p>This panel is labeled 'Secondary Insurance Information:' and display only data that was entered.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[13]]></step_number>
+	<actions><![CDATA[<p>Verify the last panel contain medical necessity information.</p>
+<p>Note this panel display only in case if user has insurance.</p>]]></actions>
+	<expectedresults><![CDATA[<p>This panel is labeled 'Physician Certification of Medical Necessity' and contain only data that was entered or selected.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[14]]></step_number>
+	<actions><![CDATA[<p>Verify that last three panels are about Standard Order Protocol</p>]]></actions>
+	<expectedresults><![CDATA[<p>Next panel is labeled as 'ACTEx Satandard Order Protocol' and next two following panels are about it.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<keywords><keyword name="regression - bugfix"><notes><![CDATA[
+
+]]></notes></keyword>
+</keywords></testcase>
+</testsuite>
+	<testsuite name="ACTEx/ Send to patient" >
+		<node_order><![CDATA[2]]></node_order>
+		<details><![CDATA[]]>
+		</details>
+<testcase internalid="26566" name="ACTEx/Send to Patient - New">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[1343]]></externalid>
+	<version><![CDATA[4]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>Log in to LWC and navigate to ACT Ex enrollment</p>]]></actions>
+	<expectedresults><![CDATA[<p>user is navigated to ACT Ex form</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>On first page check in 'Send to Patient' button and press next</p>]]></actions>
+	<expectedresults><![CDATA[<p>'Send to Patient' is selected and user is navigated to next page</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[3]]></step_number>
+	<actions><![CDATA[<p>On second page besides all mandatory data, enter unique SSN<br />
+&nbsp;</p>]]></actions>
+	<expectedresults><![CDATA[<p>unique SSN is entered</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[4]]></step_number>
+	<actions><![CDATA[<p>proceed to the last page and press 'Submit enrollment'</p>]]></actions>
+	<expectedresults><![CDATA[<p>message pops up notifying that new forms has been submitted</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[5]]></step_number>
+	<actions><![CDATA[<p>Press OK</p>]]></actions>
+	<expectedresults><![CDATA[<p>User is navigated to enrollment queue page and email is sent to user account</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[6]]></step_number>
+	<actions><![CDATA[<p>serach for the form created in step 3</p>]]></actions>
+	<expectedresults><![CDATA[<p>form opens on summary page</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[7]]></step_number>
+	<actions><![CDATA[<p>observe first section on the page</p>]]></actions>
+	<expectedresults><![CDATA[<p>in the first section of the page, 'Lifewatch Patient Enrollment Form (ACT Ex)' and&nbsp; 'Send to Patient' display</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[8]]></step_number>
+	<actions><![CDATA[<p>Open the users account, verify the body email</p>]]></actions>
+	<expectedresults><![CDATA[<p>In the first section 'New Enrollment' is visible.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<keywords><keyword name="regression - bugfix"><notes><![CDATA[
+
+]]></notes></keyword>
+</keywords></testcase>
+</testsuite></testsuite>
+	<testsuite name="Holter" >
+		<node_order><![CDATA[5]]></node_order>
+		<details><![CDATA[]]>
+		</details>
+	<testsuite name="Holter/Office hookup" >
+		<node_order><![CDATA[1]]></node_order>
+		<details><![CDATA[]]>
+		</details>
+<testcase internalid="26150" name="Holter/Office Hookup - New">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[1334]]></externalid>
+	<version><![CDATA[4]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>Log in to LWC and navigate to Holter enrollment</p>]]></actions>
+	<expectedresults><![CDATA[<p>user is navigated to Holter form</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>On first page check in 'Office Hookup' button and press next</p>]]></actions>
+	<expectedresults><![CDATA[<p>'Office Hookup' is selected and user is navigated to next page</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[3]]></step_number>
+	<actions><![CDATA[<p>On second page besides all mandatory data, enter unique SSN<br />
+&nbsp;</p>]]></actions>
+	<expectedresults><![CDATA[<p>unique SSN is entered</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[4]]></step_number>
+	<actions><![CDATA[<p>proceed to the last page and press 'Submit enrollment'</p>]]></actions>
+	<expectedresults><![CDATA[<p>message pops up notifying that new forms has been submitted</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[5]]></step_number>
+	<actions><![CDATA[<p>Press OK</p>]]></actions>
+	<expectedresults><![CDATA[<p>User is navigated to enrollment queue page and email is sent to user account</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[6]]></step_number>
+	<actions><![CDATA[<p>serach for the form created in step 3</p>]]></actions>
+	<expectedresults><![CDATA[<p>form opens on summary page</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[7]]></step_number>
+	<actions><![CDATA[<p>observe first section on the page</p>]]></actions>
+	<expectedresults><![CDATA[<p>in the first section of the page, '                                                              Lifewatch Patient Enrollment Form (Holter)' and&nbsp; 'Office Hookup' display</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[8]]></step_number>
+	<actions><![CDATA[<p>Open the users account, verify the body email</p>]]></actions>
+	<expectedresults><![CDATA[<p>In the first section 'New Enrollment' is visible.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<keywords><keyword name="regression - bugfix"><notes><![CDATA[
+
+]]></notes></keyword>
+</keywords></testcase>
+</testsuite>
+	<testsuite name="Holter/GUI Validation" >
+		<node_order><![CDATA[6]]></node_order>
+		<details><![CDATA[]]>
+		</details>
+<testcase internalid="26014" name="Holter/GUI Verification - last page/Summary page">
+	<node_order><![CDATA[6]]></node_order>
+	<externalid><![CDATA[1332]]></externalid>
+	<version><![CDATA[3]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>Log in to LWC and navigate to Enrollments - 'Holter Enrollment'</p>]]></actions>
+	<expectedresults><![CDATA[<p>User is navigated to 'Holter Enrollment' form &nbsp;<br />
+&nbsp;</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>Enter mandatory fields on all pages, proceed to last page and verify sections and buttons.</p>]]></actions>
+	<expectedresults><![CDATA[<p>User is navigated to summary page where are five buttons on the bottom of the page: Back, Print, Save Enrollment Draft, Cancel, Submit Enrollment.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[3]]></step_number>
+	<actions><![CDATA[<p>Verify first section data</p>]]></actions>
+	<expectedresults><![CDATA[<p>All that display within first panel is: title '<!--[if gte mso 9]><xml>
+<o:OfficeDocumentSettings>
+<o:RelyOnVML />
+<o:AllowPNG />
+</o:OfficeDocumentSettings>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<w:WordDocument>
+<w:View>Normal</w:View>
+<w:Zoom>0</w:Zoom>
+<w:TrackMoves />
+<w:TrackFormatting />
+<w:PunctuationKerning />
+<w:ValidateAgainstSchemas />
+<w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+<w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+<w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+<w:DoNotPromoteQF />
+<w:LidThemeOther>EN-US</w:LidThemeOther>
+<w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+<w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+<w:Compatibility>
+<w:BreakWrappedTables />
+<w:SnapToGridInCell />
+<w:WrapTextWithPunct />
+<w:UseAsianBreakRules />
+<w:DontGrowAutofit />
+<w:SplitPgBreakAndParaMark />
+<w:DontVertAlignCellWithSp />
+<w:DontBreakConstrainedForcedTables />
+<w:DontVertAlignInTxbx />
+<w:Word11KerningPairs />
+<w:CachedColBalance />
+</w:Compatibility>
+<m:mathPr>
+<m:mathFont m:val="Cambria Math" />
+<m:brkBin m:val="before" />
+<m:brkBinSub m:val="&#45;-" />
+<m:smallFrac m:val="off" />
+<m:dispDef />
+<m:lMargin m:val="0" />
+<m:rMargin m:val="0" />
+<m:defJc m:val="centerGroup" />
+<m:wrapIndent m:val="1440" />
+<m:intLim m:val="subSup" />
+<m:naryLim m:val="undOvr" />
+</m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+LatentStyleCount="267">
+<w:LsdException Locked="false" Priority="0" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Normal" />
+<w:LsdException Locked="false" Priority="9" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="heading 1" />
+<w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 2" />
+<w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 3" />
+<w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4" />
+<w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5" />
+<w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6" />
+<w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7" />
+<w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8" />
+<w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9" />
+<w:LsdException Locked="false" Priority="39" Name="toc 1" />
+<w:LsdException Locked="false" Priority="39" Name="toc 2" />
+<w:LsdException Locked="false" Priority="39" Name="toc 3" />
+<w:LsdException Locked="false" Priority="39" Name="toc 4" />
+<w:LsdException Locked="false" Priority="39" Name="toc 5" />
+<w:LsdException Locked="false" Priority="39" Name="toc 6" />
+<w:LsdException Locked="false" Priority="39" Name="toc 7" />
+<w:LsdException Locked="false" Priority="39" Name="toc 8" />
+<w:LsdException Locked="false" Priority="39" Name="toc 9" />
+<w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption" />
+<w:LsdException Locked="false" Priority="10" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Title" />
+<w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font" />
+<w:LsdException Locked="false" Priority="11" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Subtitle" />
+<w:LsdException Locked="false" Priority="22" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Strong" />
+<w:LsdException Locked="false" Priority="20" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Emphasis" />
+<w:LsdException Locked="false" Priority="59" SemiHidden="false"
+UnhideWhenUsed="false" Name="Table Grid" />
+<w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text" />
+<w:LsdException Locked="false" Priority="1" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="No Spacing" />
+<w:LsdException Locked="false" Priority="60" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Shading" />
+<w:LsdException Locked="false" Priority="61" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light List" />
+<w:LsdException Locked="false" Priority="62" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Grid" />
+<w:LsdException Locked="false" Priority="63" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 1" />
+<w:LsdException Locked="false" Priority="64" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 2" />
+<w:LsdException Locked="false" Priority="65" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 1" />
+<w:LsdException Locked="false" Priority="66" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 2" />
+<w:LsdException Locked="false" Priority="67" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 1" />
+<w:LsdException Locked="false" Priority="68" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 2" />
+<w:LsdException Locked="false" Priority="69" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 3" />
+<w:LsdException Locked="false" Priority="70" SemiHidden="false"
+UnhideWhenUsed="false" Name="Dark List" />
+<w:LsdException Locked="false" Priority="71" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Shading" />
+<w:LsdException Locked="false" Priority="72" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful List" />
+<w:LsdException Locked="false" Priority="73" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Grid" />
+<w:LsdException Locked="false" Priority="60" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Shading Accent 1" />
+<w:LsdException Locked="false" Priority="61" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light List Accent 1" />
+<w:LsdException Locked="false" Priority="62" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Grid Accent 1" />
+<w:LsdException Locked="false" Priority="63" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1" />
+<w:LsdException Locked="false" Priority="64" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1" />
+<w:LsdException Locked="false" Priority="65" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 1 Accent 1" />
+<w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision" />
+<w:LsdException Locked="false" Priority="34" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="List Paragraph" />
+<w:LsdException Locked="false" Priority="29" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Quote" />
+<w:LsdException Locked="false" Priority="30" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Intense Quote" />
+<w:LsdException Locked="false" Priority="66" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 2 Accent 1" />
+<w:LsdException Locked="false" Priority="67" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1" />
+<w:LsdException Locked="false" Priority="68" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1" />
+<w:LsdException Locked="false" Priority="69" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1" />
+<w:LsdException Locked="false" Priority="70" SemiHidden="false"
+UnhideWhenUsed="false" Name="Dark List Accent 1" />
+<w:LsdException Locked="false" Priority="71" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Shading Accent 1" />
+<w:LsdException Locked="false" Priority="72" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful List Accent 1" />
+<w:LsdException Locked="false" Priority="73" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Grid Accent 1" />
+<w:LsdException Locked="false" Priority="60" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Shading Accent 2" />
+<w:LsdException Locked="false" Priority="61" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light List Accent 2" />
+<w:LsdException Locked="false" Priority="62" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Grid Accent 2" />
+<w:LsdException Locked="false" Priority="63" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2" />
+<w:LsdException Locked="false" Priority="64" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2" />
+<w:LsdException Locked="false" Priority="65" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 1 Accent 2" />
+<w:LsdException Locked="false" Priority="66" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 2 Accent 2" />
+<w:LsdException Locked="false" Priority="67" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2" />
+<w:LsdException Locked="false" Priority="68" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2" />
+<w:LsdException Locked="false" Priority="69" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2" />
+<w:LsdException Locked="false" Priority="70" SemiHidden="false"
+UnhideWhenUsed="false" Name="Dark List Accent 2" />
+<w:LsdException Locked="false" Priority="71" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Shading Accent 2" />
+<w:LsdException Locked="false" Priority="72" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful List Accent 2" />
+<w:LsdException Locked="false" Priority="73" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Grid Accent 2" />
+<w:LsdException Locked="false" Priority="60" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Shading Accent 3" />
+<w:LsdException Locked="false" Priority="61" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light List Accent 3" />
+<w:LsdException Locked="false" Priority="62" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Grid Accent 3" />
+<w:LsdException Locked="false" Priority="63" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3" />
+<w:LsdException Locked="false" Priority="64" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3" />
+<w:LsdException Locked="false" Priority="65" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 1 Accent 3" />
+<w:LsdException Locked="false" Priority="66" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 2 Accent 3" />
+<w:LsdException Locked="false" Priority="67" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3" />
+<w:LsdException Locked="false" Priority="68" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3" />
+<w:LsdException Locked="false" Priority="69" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3" />
+<w:LsdException Locked="false" Priority="70" SemiHidden="false"
+UnhideWhenUsed="false" Name="Dark List Accent 3" />
+<w:LsdException Locked="false" Priority="71" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Shading Accent 3" />
+<w:LsdException Locked="false" Priority="72" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful List Accent 3" />
+<w:LsdException Locked="false" Priority="73" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Grid Accent 3" />
+<w:LsdException Locked="false" Priority="60" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Shading Accent 4" />
+<w:LsdException Locked="false" Priority="61" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light List Accent 4" />
+<w:LsdException Locked="false" Priority="62" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Grid Accent 4" />
+<w:LsdException Locked="false" Priority="63" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4" />
+<w:LsdException Locked="false" Priority="64" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4" />
+<w:LsdException Locked="false" Priority="65" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 1 Accent 4" />
+<w:LsdException Locked="false" Priority="66" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 2 Accent 4" />
+<w:LsdException Locked="false" Priority="67" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4" />
+<w:LsdException Locked="false" Priority="68" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4" />
+<w:LsdException Locked="false" Priority="69" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4" />
+<w:LsdException Locked="false" Priority="70" SemiHidden="false"
+UnhideWhenUsed="false" Name="Dark List Accent 4" />
+<w:LsdException Locked="false" Priority="71" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Shading Accent 4" />
+<w:LsdException Locked="false" Priority="72" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful List Accent 4" />
+<w:LsdException Locked="false" Priority="73" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Grid Accent 4" />
+<w:LsdException Locked="false" Priority="60" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Shading Accent 5" />
+<w:LsdException Locked="false" Priority="61" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light List Accent 5" />
+<w:LsdException Locked="false" Priority="62" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Grid Accent 5" />
+<w:LsdException Locked="false" Priority="63" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5" />
+<w:LsdException Locked="false" Priority="64" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5" />
+<w:LsdException Locked="false" Priority="65" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 1 Accent 5" />
+<w:LsdException Locked="false" Priority="66" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 2 Accent 5" />
+<w:LsdException Locked="false" Priority="67" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5" />
+<w:LsdException Locked="false" Priority="68" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5" />
+<w:LsdException Locked="false" Priority="69" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5" />
+<w:LsdException Locked="false" Priority="70" SemiHidden="false"
+UnhideWhenUsed="false" Name="Dark List Accent 5" />
+<w:LsdException Locked="false" Priority="71" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Shading Accent 5" />
+<w:LsdException Locked="false" Priority="72" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful List Accent 5" />
+<w:LsdException Locked="false" Priority="73" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Grid Accent 5" />
+<w:LsdException Locked="false" Priority="60" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Shading Accent 6" />
+<w:LsdException Locked="false" Priority="61" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light List Accent 6" />
+<w:LsdException Locked="false" Priority="62" SemiHidden="false"
+UnhideWhenUsed="false" Name="Light Grid Accent 6" />
+<w:LsdException Locked="false" Priority="63" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6" />
+<w:LsdException Locked="false" Priority="64" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6" />
+<w:LsdException Locked="false" Priority="65" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 1 Accent 6" />
+<w:LsdException Locked="false" Priority="66" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium List 2 Accent 6" />
+<w:LsdException Locked="false" Priority="67" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6" />
+<w:LsdException Locked="false" Priority="68" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6" />
+<w:LsdException Locked="false" Priority="69" SemiHidden="false"
+UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6" />
+<w:LsdException Locked="false" Priority="70" SemiHidden="false"
+UnhideWhenUsed="false" Name="Dark List Accent 6" />
+<w:LsdException Locked="false" Priority="71" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Shading Accent 6" />
+<w:LsdException Locked="false" Priority="72" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful List Accent 6" />
+<w:LsdException Locked="false" Priority="73" SemiHidden="false"
+UnhideWhenUsed="false" Name="Colorful Grid Accent 6" />
+<w:LsdException Locked="false" Priority="19" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis" />
+<w:LsdException Locked="false" Priority="21" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis" />
+<w:LsdException Locked="false" Priority="31" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference" />
+<w:LsdException Locked="false" Priority="32" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Intense Reference" />
+<w:LsdException Locked="false" Priority="33" SemiHidden="false"
+UnhideWhenUsed="false" QFormat="true" Name="Book Title" />
+<w:LsdException Locked="false" Priority="37" Name="Bibliography" />
+<w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading" />
+</w:LatentStyles>
+</xml><![endif]--><!--[if gte mso 10]>
+<style>
+/* Style Definitions */
+table.MsoNormalTable
+{mso-style-name:"Table Normal";
+mso-tstyle-rowband-size:0;
+mso-tstyle-colband-size:0;
+mso-style-noshow:yes;
+mso-style-priority:99;
+mso-style-qformat:yes;
+mso-style-parent:"";
+mso-padding-alt:0in 5.4pt 0in 5.4pt;
+mso-para-margin:0in;
+mso-para-margin-bottom:.0001pt;
+mso-pagination:widow-orphan;
+font-size:10.0pt;
+font-family:"Calibri","sans-serif";
+mso-bidi-font-family:"Times New Roman";}
+</style>
+<![endif]--><span style=""><span style=""><span style="font: 7pt &quot;Times New Roman&quot;;"> </span></span></span>Lifewatch Patient Enrollment Form (Holter)'.</p>
+<p>On the left are: Phone (800) 700-3788 and 'Submitted By: user (username) username@lifewatch.com'.</p>
+<p>On the right are: Fax (800) 260-8023 and 'The first device order is a: Office Hookup (or Send to Patient)'<br />
+&nbsp;</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[4]]></step_number>
+	<actions><![CDATA[<p>Verify that second panel include clinic and doctor information</p>]]></actions>
+	<expectedresults><![CDATA[<p>Clinic and doctor labels and names are displayed.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[5]]></step_number>
+	<actions><![CDATA[<p>Verify the third page content</p>]]></actions>
+	<expectedresults><![CDATA[<p>PCP Referring Physician When Applicable, PCP Referring Physician Phone # are displayed.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[6]]></step_number>
+	<actions><![CDATA[<p>Verify that fourth panel include patient information</p>]]></actions>
+	<expectedresults><![CDATA[<p>This panel is labeled 'Patient Information' and all information that was entered for the patient display, excluding those fields that was not entered any data for.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[7]]></step_number>
+	<actions><![CDATA[<p>Verify that fourth panel show shipping information, in case the user created 'Send to Patient' form</p>]]></actions>
+	<expectedresults><![CDATA[<p>This panel is labeled 'Shipping information'.</p>
+<p>Date that display within is: checked-in checkbox: 'Shipping Address is Same as Home Address' OR&nbsp;all data that was entered manually, excluding the chechbox mentioned above.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[8]]></step_number>
+	<actions><![CDATA[<p>Verify that previous panel is not displayed if user created 'Office Hookup' form</p>]]></actions>
+	<expectedresults><![CDATA[<p>It is verified.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[10]]></step_number>
+	<actions><![CDATA[<p>Verify the next section contain Monitor Hook-Up Information</p>]]></actions>
+	<expectedresults><![CDATA[<p>Data that was entered previosly is displayed.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[11]]></step_number>
+	<actions><![CDATA[<p>Verify the next section contain information about primary insurance.</p>
+<p>Note that&nbsp; this panel is on the summary page only if user has primary insurance.</p>]]></actions>
+	<expectedresults><![CDATA[<p>This panel is labeled 'Primary Insurance Information:' and display only data that was entered.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[12]]></step_number>
+	<actions><![CDATA[<p>Verify the next section contain information about secondary insurance.</p>
+<p>Note that&nbsp; this panel is on the summary page only if user has secondary insurance.</p>]]></actions>
+	<expectedresults><![CDATA[<p>This panel is labeled 'Secondary Insurance Information:' and display only data that was entered.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[13]]></step_number>
+	<actions><![CDATA[<p>Verify last section has 'Physician Name:' label and field on left and 'Date' label and field on right</p>]]></actions>
+	<expectedresults><![CDATA[<p>'Physician Name:' and 'Date' labels and fields display verified.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<keywords><keyword name="regression - bugfix"><notes><![CDATA[
+
+]]></notes></keyword>
+</keywords></testcase>
+</testsuite></testsuite>
+	<testsuite name="Pacemaker" >
+		<node_order><![CDATA[6]]></node_order>
+		<details><![CDATA[]]>
+		</details>
+<testcase internalid="9290" name="Pacemaker - New ">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[531]]></externalid>
+	<version><![CDATA[4]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>Log in to LWC&nbsp;and navigate to&nbsp; Enrollments tab, Enrollment Forms - Pacemaker</p>]]></actions>
+	<expectedresults><![CDATA[<p>Pacemaker form is opened</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>Select 'Lifewatch Care Center' from clinic dropdown, and for doctor select 'Welby Marcus'</p>]]></actions>
+	<expectedresults><![CDATA[<p>These specific Clinic and doctor are selected.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[4]]></step_number>
+	<actions><![CDATA[<p>Populate all mandatory fields </p>]]></actions>
+	<expectedresults><![CDATA[<p>Clinic, Doctor, Patient Information fields and ICD Codes are ppulated as mandatory</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[5]]></step_number>
+	<actions><![CDATA[<p>Press 'Save enrollment draft'</p>]]></actions>
+	<expectedresults><![CDATA[<p>Message pops up</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[6]]></step_number>
+	<actions><![CDATA[<p>Press OK</p>]]></actions>
+	<expectedresults><![CDATA[<p>new form is saved</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[7]]></step_number>
+	<actions><![CDATA[<p>Navigate to enrollment queue page and search for recent form </p>]]></actions>
+	<expectedresults><![CDATA[<p>Specific form is lislted in data grid results</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[8]]></step_number>
+	<actions><![CDATA[<p>click on&nbsp; Open link and observe the page</p>]]></actions>
+	<expectedresults><![CDATA[<p>On summary page it should be said that the form is pacemaker and was submitted by user from step 1.<br />
+<br />
+For ex:&nbsp; &quot;Lifewatch Patient Enrollment Form (Pacemaker)<br />
+<br />
+Submitted By: FirstName LastName (username) username@lifewatch.com&quot;</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<keywords><keyword name="regression - bugfix"><notes><![CDATA[
+
+]]></notes></keyword>
+</keywords></testcase>
+</testsuite>
+	<testsuite name="HST" >
+		<node_order><![CDATA[12]]></node_order>
+		<details><![CDATA[]]>
+		</details>
+	<testsuite name="Verify Enrollment Draft - Back and Next pages navigation" >
+		<node_order><![CDATA[0]]></node_order>
+		<details><![CDATA[]]>
+		</details>
+<testcase internalid="16191" name="HST-NEW-Primary/Secondary Insurance; Shipping address is the same as home address; Saved then Submit">
+	<node_order><![CDATA[2]]></node_order>
+	<externalid><![CDATA[892]]></externalid>
+	<version><![CDATA[4]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>Log in to LWC, navigate to Enrollments - HST enrollment form.</p>]]></actions>
+	<expectedresults><![CDATA[<p>System navigates the user to page 1 of HST form.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>Select clinic&nbsp;and doctor from respective&nbsp;dropdowns.&nbsp;Key in all the data into Patient Information section. Check &quot;Shipping Address Is same as Home Address&quot;&nbsp;check box&nbsp;and press 'next' button.</p>]]></actions>
+	<expectedresults><![CDATA[<p>User is navigated to the next Physician Certification of Medical Necessity page.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[3]]></step_number>
+	<actions><![CDATA[<p>Click on the calendar icon for&nbsp; &quot;Enrollments Start&quot; date and select the date.</p>]]></actions>
+	<expectedresults><![CDATA[<p>Data is visible in the respective field.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[4]]></step_number>
+	<actions><![CDATA[<p>Do not enter Height and Weight into respectvie fields and click &quot;Next&quot; button.</p>]]></actions>
+	<expectedresults><![CDATA[<p>&quot;Height is Required&quot; and &quot;Weight is Required&quot; error messages are visible&nbsp;at the buttom of the screen in red.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[5]]></step_number>
+	<actions><![CDATA[<p>Enter Height and Weight into respective fields and click&nbsp;next button.</p>]]></actions>
+	<expectedresults><![CDATA[<p>User is navigated to 'Primary Insurance Information' page .</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[6]]></step_number>
+	<actions><![CDATA[<p>Enter&nbsp;Primary insurance informaiton,&nbsp;check '<span class="iefixlabel">Secondary Insurance Carrier exists</span>' check box and press 'next' button.</p>]]></actions>
+	<expectedresults><![CDATA[<p>User is navigated to 'Secondary Insurance Information' page.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[7]]></step_number>
+	<actions><![CDATA[<p>Enter&nbsp;Secondary insurance information into respective fields and press 'Next' button.</p>]]></actions>
+	<expectedresults><![CDATA[<p>User is navigated to Summary page.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[8]]></step_number>
+	<actions><![CDATA[<p>Verify Summary page:</p>]]></actions>
+	<expectedresults><![CDATA[<p>&nbsp;Enrolled by section - your userid is visible;</p>
+<p>Clinic and Doctor names are visible in Clinic and doctor section.</p>
+<p>Data is valid in Patient Information section;</p>
+<p>&quot;Shipping Address is same as Home Address&quot; check box (checked) and label visible;</p>
+<p>Physician Certification of Medical Necessity information is visible; Primary and Secondary Insurance section and their information are visible.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[9]]></step_number>
+	<actions><![CDATA[<p>Press 'Save enrollment draft'</p>]]></actions>
+	<expectedresults><![CDATA[<p>&quot;Enrollment Draft was successfully saved&quot; confirmation message pops up.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[10]]></step_number>
+	<actions><![CDATA[<p>press OK</p>]]></actions>
+	<expectedresults><![CDATA[<p>System navigates&nbsp;to the&nbsp;enrollment queue page.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[11]]></step_number>
+	<actions><![CDATA[<p>Enter last name or the portion of the last name of the patinet who just had newly created enrollment and click &quot;Search&quot; button.</p>]]></actions>
+	<expectedresults><![CDATA[<p>the record or&nbsp;list of records matching search criteria are populated in the data grid.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[12]]></step_number>
+	<actions><![CDATA[<p>Click &quot;Open&quot;&nbsp;link of the specific record.</p>]]></actions>
+	<expectedresults><![CDATA[<p>the summary page is loaded.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[13]]></step_number>
+	<actions><![CDATA[<p>go back 'till first page.</p>]]></actions>
+	<expectedresults><![CDATA[<p>user is navigated to page1, while all pages that were populated wih data are displaying in retrospective: 'Physician Certification of Medical Necessity' page, Sec.Ins.Info page, Prim.Ins.Info page,page 3, page 2, page 1</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[14]]></step_number>
+	<actions><![CDATA[<p>go next till last page</p>]]></actions>
+	<expectedresults><![CDATA[<p>user is navigated to summary page going through following pages: page 2, page 3, Prim.Ins.Info, Sec..Ins.Info, 'Physician Certification of Medical Necessity'.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[15]]></step_number>
+	<actions><![CDATA[<p>When at the Summary page click &quot;Submit&quot; button.</p>]]></actions>
+	<expectedresults><![CDATA[<p>&quot;New enrollment - Your request has been successfully emailed to your Customer Service Representative&quot; confirmation message pops up.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[16]]></step_number>
+	<actions><![CDATA[<p>Click &quot;OK&quot; button.</p>]]></actions>
+	<expectedresults><![CDATA[<p>system navigates to Enrollment Queue.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[17]]></step_number>
+	<actions><![CDATA[<p>Login&nbsp;to PA and search for patient by patient last name or patient ID (wich is SSN in LWC)</p>]]></actions>
+	<expectedresults><![CDATA[<p>The record or list of records matching search criteria are populated in the data grid.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[18]]></step_number>
+	<actions><![CDATA[<p>Login to SA and search for patient by last name.</p>]]></actions>
+	<expectedresults><![CDATA[<p>Patient is found and and enrollment has been created in SA.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[19]]></step_number>
+	<actions><![CDATA[<p>Check the Email for enrollment email notification.</p>]]></actions>
+	<expectedresults><![CDATA[<p>Enrollment email notifcation exists.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[20]]></step_number>
+	<actions><![CDATA[<p>Open enrolment email notification and reopen enrollment in LWC via Enrollment Queue. Verify data.</p>]]></actions>
+	<expectedresults><![CDATA[<p>It is&nbsp; indicated as a New enrollment. Data match.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<keywords><keyword name="regression - bugfix"><notes><![CDATA[
+
+]]></notes></keyword>
+</keywords></testcase>
+</testsuite>
+<testcase internalid="23752" name="HST-Verify that two diagnosis codes and the ICD banner have been added to HST form">
+	<node_order><![CDATA[2]]></node_order>
+	<externalid><![CDATA[1292]]></externalid>
+	<version><![CDATA[5]]></version>
+	<summary><![CDATA[<p>&nbsp;- Diagnosis codes added are 780.53 - Obstructive Sleep apnea (Adult) (Pediatric)</p>
+<p>&nbsp;-ICD banner added: <strong>Reminder: </strong><span id="ctl00_m_ACTARRstep2_dscControls_lblDisclaimer" class="dstext">it is the provider's responsibility to select codes carried out to the highest level of specificity and selected from the ICD-9-CM code book appropriate to the year in which the service is rendered for the claim(s) submitted</span></p>]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>Log in to LWC, navigate to Enrollments - HST enrollment form.</p>]]></actions>
+	<expectedresults><![CDATA[<p>System navigates the user to page 1 of HST form.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>Select/enter all requried data&nbsp;on the demographic page and&nbsp;click &quot;Next&quot;.</p>]]></actions>
+	<expectedresults><![CDATA[<p>User is navigated to the next Physician Certification of Medical Necessity page.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[3]]></step_number>
+	<actions><![CDATA[<p>Observe the page.</p>]]></actions>
+	<expectedresults><![CDATA[<p>Office visit section: Date is not requried field. The &quot;Medicare requires an office visit to prescrive Home Sleep Testing&quot;&nbsp; statement has been removed.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[4]]></step_number>
+	<actions><![CDATA[<p>Verify Diagnosis: Expand the&nbsp;&quot;Diagnosis Code&quot;&nbsp;dropdown and observe the values in it.</p>]]></actions>
+	<expectedresults><![CDATA[<p>Obstructive sleep apnea (Adult) (Pediatric) - (327.23) , Hypersomnia with sleep apnea - (780.53), Unspecified and&nbsp; Hypeersomnia, Unspecified - (780.54) are added.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[5]]></step_number>
+	<actions><![CDATA[<p>Observe the page and Verify banner:</p>]]></actions>
+	<expectedresults><![CDATA[<p>Reminder: it is the provider's responsibility to select codes carried out to the highest level of specificity and selected from the ICD-9-CM code book appropriate to the year in which the service is rendered for the claim(s) submitted.</p>
+<p><span style="font-weight: bold;"> <br />
+</span></p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[6]]></step_number>
+	<actions><![CDATA[<p>Enter all the required data into respective fields,&nbsp;check the &quot;Patient does not have insurance or&nbsp;is self pay&quot; check button,&nbsp;Select one of the newly added Diagnosis code&nbsp;and click Next.</p>]]></actions>
+	<expectedresults><![CDATA[<p>Sumamry page is loaded.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[7]]></step_number>
+	<actions><![CDATA[<p>Verify Summary page:</p>]]></actions>
+	<expectedresults><![CDATA[<p>Newly Diagnosis selected is displayed on the <span style="font-weight: bold;" class="printTitle">Physician Certification of Medical Necessity section; ICD banner is visible and reads: </span><strong><br />
+</strong></p>
+<p>Reminder: it is the provider's responsibility to select codes carried  out to the highest level of specificity and selected from the ICD-9-CM  code book appropriate to the year in which the service is rendered for  the claim(s) submitted.</p>
+<span style="font-weight: bold;"> </span>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[8]]></step_number>
+	<actions><![CDATA[<p>Press 'Save enrollment draft'</p>]]></actions>
+	<expectedresults><![CDATA[<p>&quot;Enrollment Draft was successfully saved&quot; confirmation message pops up.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[9]]></step_number>
+	<actions><![CDATA[<p>press OK</p>]]></actions>
+	<expectedresults><![CDATA[<p>System navigates&nbsp;to the&nbsp;enrollment queue page.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[10]]></step_number>
+	<actions><![CDATA[<p>Enter last name or the portion of the last name of the patient who just had newly created enrollment and click &quot;Search&quot; button.</p>]]></actions>
+	<expectedresults><![CDATA[<p>the record or&nbsp;list of records matching search criteria are populated in the data grid.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[11]]></step_number>
+	<actions><![CDATA[<p>Click &quot;Open&quot;&nbsp;link of the desired record.</p>]]></actions>
+	<expectedresults><![CDATA[<p>The summary page is loaded.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[12]]></step_number>
+	<actions><![CDATA[<p>When at the Summary page click &quot;Submit&quot; button.</p>]]></actions>
+	<expectedresults><![CDATA[<p>&quot;New enrollment - Your request has been successfully emailed to your Customer Service Representative&quot; confirmation message pops up.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[13]]></step_number>
+	<actions><![CDATA[<p>Click &quot;OK&quot; button.</p>]]></actions>
+	<expectedresults><![CDATA[<p>system navigates to Enrollment Queue.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[14]]></step_number>
+	<actions><![CDATA[<p>Repeat step 8.</p>]]></actions>
+	<expectedresults><![CDATA[]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<keywords><keyword name="regression - bugfix"><notes><![CDATA[
+
+]]></notes></keyword>
+</keywords></testcase>
+</testsuite></testsuite>
+	<testsuite name="Enrollment Queue" >
+		<node_order><![CDATA[11]]></node_order>
+		<details><![CDATA[]]>
+		</details>
+<testcase internalid="596" name="Enrollment Queue - Verify Search">
+	<node_order><![CDATA[1]]></node_order>
+	<externalid><![CDATA[107]]></externalid>
+	<version><![CDATA[7]]></version>
+	<summary><![CDATA[<p>This test covers all the crieterias and combination of all the crieterias</p>]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>Log in LWC applicaton, and navigate to Ebrollment Queue</p>]]></actions>
+	<expectedresults><![CDATA[<p>user is navigated to Enrollment Queue</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>Do a search by Clinic fliter &quot;Lifewatch Care Center&quot;</p>]]></actions>
+	<expectedresults><![CDATA[<p>Results only with Lifewatch Care center clinic, are displayed in the grid</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[3]]></step_number>
+	<actions><![CDATA[<p>Do a search by other filters: Doctor, Status, Service</p>]]></actions>
+	<expectedresults><![CDATA[<p>results related to search filter display in the grid </p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[4]]></step_number>
+	<actions><![CDATA[<p>Enter name in 'Patient Last Name' and press Search</p>]]></actions>
+	<expectedresults><![CDATA[<p>Results that contain that specific name entered in the search field, are listed in the grid</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[5]]></step_number>
+	<actions><![CDATA[<p>In Clinic dropdown choose one clinic</p>]]></actions>
+	<expectedresults><![CDATA[<p>Specified clinic is listed in Clinic dropdown</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[6]]></step_number>
+	<actions><![CDATA[<p>In Doctor dropdown choose one of the listed doctors</p>]]></actions>
+	<expectedresults><![CDATA[<p>Specified doctor is listed in Doctor dropdown and patients are listed for the specified clinic and doctor</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[7]]></step_number>
+	<actions><![CDATA[<p>Back to the clinic dropdown and choose --Select clinic--</p>]]></actions>
+	<expectedresults><![CDATA[<p>' --Select clinic-- '&nbsp; is listed in Clinic dropdown and Doctor dropdown is updated with &quot;--Select Doctor--&quot;</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[8]]></step_number>
+	<actions><![CDATA[<p>Click on Search button </p>]]></actions>
+	<expectedresults><![CDATA[<p>All Patient are listed</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[9]]></step_number>
+	<actions><![CDATA[<p>Navigate to Enrollments/Enrollment&nbsp;Queue.</p>]]></actions>
+	<expectedresults><![CDATA[<p>Enrollment Queue is loaded and no previous search criteria has been saved. No records displayed in datagrid.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<keywords><keyword name="regression - bugfix"><notes><![CDATA[
+
+]]></notes></keyword>
+</keywords></testcase>
+</testsuite></testsuite>
+	<testsuite name="Reports" >
+		<node_order><![CDATA[8]]></node_order>
+		<details><![CDATA[]]>
+		</details>
+	<testsuite name="Validate Search Results tab" >
+		<node_order><![CDATA[107]]></node_order>
+		<details><![CDATA[]]>
+		</details>
+	<testsuite name="Validate Left Panel" >
+		<node_order><![CDATA[0]]></node_order>
+		<details><![CDATA[]]>
+		</details>
+	<testsuite name="Validate Search Type" >
+		<node_order><![CDATA[1]]></node_order>
+		<details><![CDATA[]]>
+		</details>
+<testcase internalid="14447" name="Reports - Validate Search Type - validate &quot;My Patients&quot; radio button">
+	<node_order><![CDATA[100]]></node_order>
+	<externalid><![CDATA[785]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>Navigate to LifeWatch Connect web site</p>]]></actions>
+	<expectedresults><![CDATA[<p>&quot;LifeWatch Connect&quot;' Login screen is loaded.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>Enter the Valid Admin UserId and Password in the corresponding fields and click Login button.</p>]]></actions>
+	<expectedresults><![CDATA[<p>User is login in the application</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[3]]></step_number>
+	<actions><![CDATA[<p>Navigate to Reports - Patient Reports tab</p>]]></actions>
+	<expectedresults><![CDATA[<p>Patient Reports is loaded</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[4]]></step_number>
+	<actions><![CDATA[<p>Check 'My Patients' radio button</p>]]></actions>
+	<expectedresults><![CDATA[<p>My Patients radio button is checked</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[5]]></step_number>
+	<actions><![CDATA[<p>In Clinic dropdown choose &quot;--SELECT CLINIC--&quot; and then check doctor dropdown </p>]]></actions>
+	<expectedresults><![CDATA[<p>Only added doctors (from User Management - Select Doctor) are displayed</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<keywords><keyword name="spr11 - regr-main"><notes><![CDATA[
+sprint 11: merge t main
+]]></notes></keyword>
+</keywords></testcase>
+</testsuite></testsuite></testsuite></testsuite>
+	<testsuite name="obsolate test cases" >
+		<node_order><![CDATA[18]]></node_order>
+		<details><![CDATA[]]>
+		</details>
+	<testsuite name="Regression" >
+		<node_order><![CDATA[8]]></node_order>
+		<details><![CDATA[]]>
+		</details>
+	<testsuite name="Service Type" >
+		<node_order><![CDATA[101]]></node_order>
+		<details><![CDATA[]]>
+		</details>
+<testcase internalid="4882" name="Status - Validate Service Type - All section (Functional)">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[461]]></externalid>
+	<version><![CDATA[3]]></version>
+	<summary><![CDATA[]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>Double-click on LifeWatch Connect icon from the desktop.</p>]]></actions>
+	<expectedresults><![CDATA[<p>&quot;LifeWatch Connect&quot;' Login screen is loaded.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>Enter the Valid Admin UserId and Password in the corresponding fields and click Login button.</p>]]></actions>
+	<expectedresults><![CDATA[<p>User is logged </p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[3]]></step_number>
+	<actions><![CDATA[<p>Navigate to Patient Status.</p>]]></actions>
+	<expectedresults><![CDATA[<p>Patient Status page is loaded.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[4]]></step_number>
+	<actions><![CDATA[<p>Select for Service Type status ALL</p>]]></actions>
+	<expectedresults><![CDATA[<p>ALL status is displayed</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[5]]></step_number>
+	<actions><![CDATA[<p>Select one clinic from the dropdown</p>]]></actions>
+	<expectedresults><![CDATA[<p>Selected clinc is displayed</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[6]]></step_number>
+	<actions><![CDATA[<p>Select one of the doctors who are listed in the dropdowns</p>]]></actions>
+	<expectedresults><![CDATA[<p>Selected doctor is displayed</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[7]]></step_number>
+	<actions><![CDATA[<p>Select for Enrollment Status status ALL</p>]]></actions>
+	<expectedresults><![CDATA[<p>Selected status is displayed</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[8]]></step_number>
+	<actions><![CDATA[<p>Enter valid text for Patient Filter</p>]]></actions>
+	<expectedresults><![CDATA[<p>Entered text is displayed</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[9]]></step_number>
+	<actions><![CDATA[<p>Click on Seach button</p>]]></actions>
+	<expectedresults><![CDATA[<p>All patients that belong to specified clinic and doctor and have enrollment statuses and types 'All' are displayed in the DataGrid</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<keywords><keyword name="regression - bugfix"><notes><![CDATA[
+
+]]></notes></keyword>
+</keywords></testcase>
+</testsuite></testsuite>
+	<testsuite name="Regression" >
+		<node_order><![CDATA[12]]></node_order>
+		<details><![CDATA[]]>
+		</details>
+	<testsuite name="Enrollments" >
+		<node_order><![CDATA[0]]></node_order>
+		<details><![CDATA[]]>
+		</details>
+	<testsuite name="AFTC" >
+		<node_order><![CDATA[107]]></node_order>
+		<details><![CDATA[]]>
+		</details>
+	<testsuite name="Office Hookup" >
+		<node_order><![CDATA[1]]></node_order>
+		<details><![CDATA[]]>
+		</details>
+<testcase internalid="22132" name="AFTC/Basic flow//OH/Same as Home ship address/Ablation/ACT/ICD9Code&lt;&gt;426.9/NoIns/Submit">
+	<node_order><![CDATA[0]]></node_order>
+	<externalid><![CDATA[1286]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<div><span style="font-size: 9pt">Basic flow: This test case will verify AFTC office hookup Ablation Enrollment&nbsp; with ICD-9 only and with no Insurance can be successfully&nbsp;and enrollment will be created in PA and SA.</span></div>]]></summary>
+	<preconditions><![CDATA[]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[2]]></importance>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>Navigate to LWC web site</p>]]></actions>
+	<expectedresults><![CDATA[<p>&quot;LifeWatch Connect&quot;' Login screen is loaded.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>Enter the Valid Admin UserId and Password in the corresponding fields and click Login button.</p>]]></actions>
+	<expectedresults><![CDATA[<p>the Welcome page has been loaded.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[3]]></step_number>
+	<actions><![CDATA[<p>Navigate to Enrollment tab - AFTC enrollment</p>]]></actions>
+	<expectedresults><![CDATA[<p>AFTC enrollment page is loaded</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[4]]></step_number>
+	<actions><![CDATA[<p><span style="font-size: larger">Choose office hookup&nbsp;on a&nbsp;first page and click &quot;Next&quot; button.</span></p>]]></actions>
+	<expectedresults><![CDATA[<p>Page #2 is loaded. Title of the page is: &quot;<span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; mso-fareast-font-family: 'Times New Roman'; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA">LifeWatch AF TeleClinic Enrollment Form&quot;.</span></p>
+<p><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; mso-fareast-font-family: 'Times New Roman'; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA">All PCP related fields has not been displayed.</span></p>
+<p><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; mso-fareast-font-family: 'Times New Roman'; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA">The last page section displays shipping information</span><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; mso-fareast-font-family: 'Times New Roman'; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA">.</span></p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[5]]></step_number>
+	<actions><![CDATA[<p>In the clinic/doctor expand the clinic driodown.</p>]]></actions>
+	<expectedresults><![CDATA[<p>Only clinic with AFTC in the name are shown in the drop down.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[6]]></step_number>
+	<actions><![CDATA[<p>Enter all reqeuired data into respective fields and click &quot;Next&quot; button.</p>]]></actions>
+	<expectedresults><![CDATA[<p>Page #3 Patient schedule has been loaded. New section to capture scheduling information is visible. Three options: Ablation, CardioVersion, and Medical Therapy are avaiable for the user to choose.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[7]]></step_number>
+	<actions><![CDATA[<p>Click the calendar icon.</p>]]></actions>
+	<expectedresults><![CDATA[<p>Calendar pops-up. The current date is indicatied in yellow.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[8]]></step_number>
+	<actions><![CDATA[<p><span style="font-size: larger">Validate data in&nbsp;treatment&nbsp;date field: Try to enter none numeric values into field. Try to enter numeric values.</span></p>]]></actions>
+	<expectedresults><![CDATA[<p><span style="font-size: larger"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; mso-fareast-font-family: 'Times New Roman'; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA">Nothing happens. Field remain not editable for none numeric values. fields accepts numeric values.</span></span></p>
+<p>&nbsp;</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[9]]></step_number>
+	<actions><![CDATA[<p>Enter valid date for Date of Treatment manually or by expanding the calendar icon.&nbsp;Choose Ablation radio button</p>]]></actions>
+	<expectedresults><![CDATA[<p>The screen expands. The&nbsp; timeline displaying Today's date, Date Of Treatment, and Enrollment dates and the Schedule table displaying Date of Enrollments, Device Type, Duration, and Interval are visible.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[10]]></step_number>
+	<actions><![CDATA[<p>Validate default schedule of enrollment dates on a timeline and a datagrid</p>]]></actions>
+	<expectedresults><![CDATA[<p>Default values for Ablation are:14 days; Device type -&nbsp;ACT; enrollment date -&nbsp;today's date;180 days from today;180 days from previous date&nbsp; and&nbsp; 180 days from previous date</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[11]]></step_number>
+	<actions><![CDATA[<p>Click &quot;Next&quot; button.</p>]]></actions>
+	<expectedresults><![CDATA[<p>Page # 4 is loaded.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[12]]></step_number>
+	<actions><![CDATA[<p>Observe page 4.</p>]]></actions>
+	<expectedresults><![CDATA[<p>Section 1 has a label &quot;Serial Number for the first device order&quot; following with red astrick and input field.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[13]]></step_number>
+	<actions><![CDATA[<p>enter serial number, select ICD-9 code &lt;&gt; 426.9 from ICD-9 Diagnosis code. Check &quot;Patient does not have insurance or is self pay&quot; check box.</p>]]></actions>
+	<expectedresults><![CDATA[<p>serial number is visible in the respected field, &quot;Reminder: it is the provider's responsibility to select codes carried out ot the highest level of specificity and selected from ICD-9-CM code book appropriate to the year in which the service is rendered for the claim(s) submitted&quot; is read, ICD-9 code &lt;&gt; 426.9 is visible in the respective field.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[14]]></step_number>
+	<actions><![CDATA[<p>Click Next.</p>]]></actions>
+	<expectedresults><![CDATA[<p>Summary page is loaded.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[15]]></step_number>
+	<actions><![CDATA[<p>Observe summary page.</p>]]></actions>
+	<expectedresults><![CDATA[<p>All the entered information previously entered is displayed. new sections: Shipping information (for office hookup), Patient Schedule are displayed with the proper data.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[16]]></step_number>
+	<actions><![CDATA[<p>Click &quot;save enrollment Draft&quot;.</p>]]></actions>
+	<expectedresults><![CDATA[<p>&quot;Enrollment Draft was successfully saved - confirmation message has been displayed.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[17]]></step_number>
+	<actions><![CDATA[<p>Click &quot;Ok&quot;.</p>]]></actions>
+	<expectedresults><![CDATA[<p>System takes you to Enrollment Queue.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[18]]></step_number>
+	<actions><![CDATA[<p>Search for newly created enrollment draft by Last name.</p>]]></actions>
+	<expectedresults><![CDATA[<p>The data grid is displayed and enrollment draft record visible in the grid. Open link and &quot;Delete&quot; button are visible.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[19]]></step_number>
+	<actions><![CDATA[<p>Click &quot;Open&quot; link.</p>]]></actions>
+	<expectedresults><![CDATA[<p>The summary page of the enrollemnt draft has been loaded.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[20]]></step_number>
+	<actions><![CDATA[<p>Verify data on Summary page. (test data spreasheet will be providied).</p>]]></actions>
+	<expectedresults><![CDATA[<p>Data match.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[21]]></step_number>
+	<actions><![CDATA[<p>Click &quot;Submit&quot; enrollment.</p>]]></actions>
+	<expectedresults><![CDATA[<p>Confirmation message pops-up.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[22]]></step_number>
+	<actions><![CDATA[<p>Click &quot;OK&quot;.</p>]]></actions>
+	<expectedresults><![CDATA[<p>System redirects to enrollment Queue.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[23]]></step_number>
+	<actions><![CDATA[<p>Log in to PA and search for newly created enrollment in LWC.</p>]]></actions>
+	<expectedresults><![CDATA[<p>Record has been found.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[24]]></step_number>
+	<actions><![CDATA[<p>In the left panel tree expand the devices folder.</p>]]></actions>
+	<expectedresults><![CDATA[<p>Device is visible in the folder.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[25]]></step_number>
+	<actions><![CDATA[<p>Log in to SA and verify enrollment record has been generated.</p>]]></actions>
+	<expectedresults><![CDATA[<p>Record found and enrollment has been generated for the patient.</p>]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+<keywords><keyword name="regression - bugfix"><notes><![CDATA[
+
+]]></notes></keyword>
+</keywords></testcase>
+</testsuite></testsuite></testsuite></testsuite></testsuite></testsuites>
+
+	</testplan>
