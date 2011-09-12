@@ -91,7 +91,10 @@ class GUITestResult(unittest.TestResult):
     def startTest(self, test):
         unittest.TestResult.startTest(self, test)
         self.callback.notifyTestStarted(test)
-
+    
+    def addSuccess(self, test):
+        unittest.TestResult.addSuccess(self, test)
+        self.callback.notifyTestPassed(test)
 
 class RollbackImporter:
     """This tricky little class is used to make sure that modules under test
@@ -543,7 +546,8 @@ class EnhancedGUIRunner():
     def notifyTestFinished(self, test):
         self.queue.put(TestFinishedMessage(test))
         pass
-    
+    def notifyTestPassed(self, test):
+        self.runner.notifyTestPassed(test)
     def executeTestFinished(self, test):
         self.remainingCountVar.set(self.remainingCountVar.get() - 1)
         self.runCountVar.set(1 + self.runCountVar.get())
@@ -555,6 +559,7 @@ class EnhancedGUIRunner():
         self.averageVar.set(time.strftime("%M:%S", 
                                           time.localtime(soFar / self.runCountVar.get())))
         self.setDisplayStatus(self.currentTestIndex, 'SUCCESS')
+        
         if self.currentTestIndex >= len(self.errorInfo):
             # no error, so pad the error list for this test
             self.errorInfo.append((test,None))

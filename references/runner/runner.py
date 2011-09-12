@@ -193,7 +193,7 @@ class {{name}}(SeleniumTestCase):
             tc = self.tcdict[test.__class__.__module__]
         if tc:
             if self.tlupdate:
-                if (status=='p' and not tc['result']) or status in ['b', 'f']:
+                if status in ['p', 'b', 'f']:
                     self.client.reportTCResult(tc['id'], self.planid, self.buildid, status)
             if self.stream:
                 self.stream.write(self.statuses[status])
@@ -232,5 +232,5 @@ def main(*argv):
     bld.run()
     bld.stream.close()
 if __name__=='__main__':
-    main("--testlink", "--autogenerate", "--skip_missing", runner_config.DEFAULT_PLAN)
-    #main(*sys.argv[1:])
+    #main("--testlink", "--autogenerate", "--skip_missing", runner_config.DEFAULT_PLAN)
+    main(*sys.argv[1:])

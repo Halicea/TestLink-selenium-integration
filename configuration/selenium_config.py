@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-server_address = "devconnect304.dev.lwi.com"
+server_address = "localhost"
 server_port= 4444
-browser = "*chrome"
+browser = "*googlechrome"
 initial_address = "http://devconnect5.dev.lwi.com:8083/Default.aspx"
