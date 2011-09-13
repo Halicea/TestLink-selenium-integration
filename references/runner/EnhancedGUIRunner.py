@@ -10,7 +10,6 @@ and disclaimers are retained in their original form.
 ============ Original Copyright Notice and Disclaimer below =================
 An enhanced GUI test runner for the PyUnit unit testing framework, derived from
 Steve Purcell's original GUI framework and application shipped with PyUnit.
-
 For further information, see http://www.path-not-tested.com
 
 Copyright (c) 2010 Jonella Michaylov
@@ -44,6 +43,8 @@ AND THERE IS NO OBLIGATION WHATSOEVER TO PROVIDE MAINTENANCE,
 SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
 """
 import selenium_config
+import tkFileDialog
+from Tkconstants import ANCHOR
 
 __author__ = "Costa Halicea Michaylov (costa@halicea.com)"
 __version__ = "$Revision: 1.0 $"
@@ -62,7 +63,6 @@ import string
 #sys.path.append(os.path.abspath(os.path.join(os.path.dirname(os.path.dirname(__file__)), 'configuration')))
 import runner_config
 tk = Tkinter # Alternative to the messy 'from Tkinter import *' often seen
-
 
 ##############################################################################
 # GUI framework classes
@@ -231,12 +231,12 @@ class EnhancedGUIRunner():
         self.elapsedVar.set("0:00")
         self.averageVar = tk.StringVar()
         self.averageVar.set("0:00")
+        self.testsDirVar = tk.StringVar()
         self.top = tk.Frame()
         self.top.pack(fill=tk.BOTH, expand=1)
         self.createWidgets()
         self.queue = Queue.Queue()
         self.currentTestIndex = 0
-        
 
     def runClicked(self):
         "To be called in response to user choosing to run a test"
@@ -264,7 +264,7 @@ class EnhancedGUIRunner():
                                skipMissing = (self.skipMissingVar.get() and [True, ] or [False, ])[0],
                                stream=stream,
                                testResultClass= GUITestResult,
-                               testsdir=None, browser=self.browserVar.get()
+                               testsdir=self.testsDirVar.get(), browser=selenium_config.BROWSERS[self.browserVar.get()]
                                )
             self.runner.testresult = GUITestResult(self)
             
@@ -284,7 +284,12 @@ class EnhancedGUIRunner():
         self.thread1 = threading.Thread(target=self.bgRunner)
         self.thread1.start()
         self.theLoop()
-            
+    def runLocalServerClicked(self):
+        th = threading.Thread(target=self.executeRunLocalServer)
+        th.start()
+    def executeRunLocalServer(self):
+        os.system("start call "+os.path.join(runner_config.SELENIUM_SERVER_JAR))
+        
     def showtests(self, x):
         if isinstance(x, unittest.TestCase):
             print x.id()
@@ -292,9 +297,9 @@ class EnhancedGUIRunner():
             #tk.Label(self.testFrame, text=x.id()).pack() 
         elif isinstance(x, unittest.TestSuite):
             for thing in x._tests:
-                self.showtests(thing)  
+                self.showtests(thing)
     
-    def bgRunner(self):   
+    def bgRunner(self):
         self.runner.run()
         self.notifyStopped()
         pass
@@ -322,7 +327,11 @@ class EnhancedGUIRunner():
                 except Queue.Empty:
                     pass
             self.top.after(100, self.theLoop) 
-
+    def openClicked(self, *args, **kwargs):
+        initialdir=self.testsDirVar.get()
+        dname = tkFileDialog.askdirectory(initialdir=initialdir, title="Select the directory for the tests")
+        if dname:
+            self.testsDirVar.set(dname)
     def createWidgets(self):
         """Creates and packs the various widgets.
         
@@ -372,14 +381,21 @@ class EnhancedGUIRunner():
         skipMissingButton.pack(side=tk.LEFT, expand=0, anchor=tk.W)
         self.skipMissingVar.set(1)
         
-        browserFrame = tk.Frame(rightFrame, borderwidth=0)
-        browserFrame.pack(side=tk.TOP, anchor=tk.W)
+        browserFrame = tk.Frame(rightFrame, borderwidth=3)
+        browserFrame.pack(side=tk.TOP, fill=tk.X, anchor=tk.W)
         browserLabel = tk.Label(browserFrame, text="Test with")
-        browserLabel.pack(side=tk.LEFT, expand=0, anchor=tk.W)
-        browserCombo = tk.OptionMenu(browserFrame, self.browserVar, *selenium_config.BROWSERS)
-        browserCombo.pack(side=tk.LEFT, expand=1, anchor=tk.W)
+        browserLabel.pack(side=tk.LEFT, expand=0)
+        browserCombo = tk.OptionMenu(browserFrame, self.browserVar, *selenium_config.BROWSERS.keys())
+        browserCombo.pack(side=tk.LEFT, expand=1, fill=tk.NONE, anchor=tk.NW)
         self.browserVar.set(selenium_config.browser)
         
+#        dirFrame = tk.Frame(self.top, relief=tk.GROOVE)
+#        dirFrame.pack(side=tk.TOP, fill=tk.X, anchor=tk.NW, expand=1)
+        testsDirInput = tk.Entry(browserFrame,textvariable=self.testsDirVar, width=50)
+        testsDirInput.pack(side=tk.LEFT, fill=tk.X, expand=1, anchor=tk.NW)
+        self.testsDirVar.set(runner_config.TESTS_DIRECTORY.replace('\\', '/'))
+        openFile = tk.Button(browserFrame, text="...", command=self.openClicked)
+        openFile.pack(side=tk.LEFT, anchor=tk.NE)
         # Progress bar
         progressFrame = tk.Frame(rightFrame, relief=tk.GROOVE, borderwidth=2)
         progressFrame.pack(fill=tk.X, expand=0, anchor=tk.NW)
@@ -394,6 +410,10 @@ class EnhancedGUIRunner():
         self.stopGoButton = tk.Button(buttonFrame, text="Start",
                                       command=self.runClicked)
         self.stopGoButton.pack(fill=tk.X)
+        self.runLocalServer = tk.Button(buttonFrame, text="Start Selenium Server",
+                                      command=self.runLocalServerClicked)
+        self.runLocalServer.pack(fill=tk.X)
+        
         tk.Button(buttonFrame, text="Close",
                   command=self.top.quit).pack(side=tk.BOTTOM, fill=tk.X)
         tk.Button(buttonFrame, text="About",

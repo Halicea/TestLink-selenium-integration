@@ -18,6 +18,7 @@ import os
 from os.path import dirname
 import sys
 import unittest
+import selenium_config
 sys.path.append(os.path.join(dirname(dirname(dirname(__file__))), 'references'))
 sys.path.append(os.path.join(dirname(dirname(dirname(__file__))), 'configuration'))
 import xml.dom.minidom as md
@@ -60,11 +61,19 @@ class TestLinkBuild(object):
                  testsdir=None, browser=None):
         print 'Setting up the environment'
         #LOAD THE TESTS from the Directory
-        sys.path.append(testsdir or runner_config.TESTS_DIRECTORY)
+        self.testsdir = testsdir or runner_config.TESTS_DIRECTORY
+        if not os.path.exists(self.testsdir):
+            if self.stream:
+                self.stream.write('Tests directory '+self.testsdir+' does not exists, Creating it now...')
+            os.makedirs(self.testsdir)
+            if self.stream:
+                self.stream.write('Tests directory created.')
+
+        sys.path.append(self.testsdir)
         from selenium import SeleniumTestCase
         #Setup the browser
-        if browser:
-            SeleniumTestCase.browser = browser
+        self.browser = browser or selenium_config.browser
+        SeleniumTestCase.browser = self.browser
         #End Setup the browser
         
         #Setup the plan
@@ -145,7 +154,7 @@ class TestLinkBuild(object):
     
     def removeMissingTCs(self):
         missing = []
-        testsDir = os.path.join(runner_config.PROJECT_PATH, 'tests')
+        testsDir = self.testsdir
         for tc in self.testcases:
             tcPath = tc['fullname'].replace('.', os.path.sep)+'.py'
             if not os.path.exists(os.path.join(testsDir, tcPath)):
@@ -154,7 +163,7 @@ class TestLinkBuild(object):
             self.stream.write('Removing TC:'+m['fullname'])
             self.testcases.remove(m)
     def createTCs(self):
-        testsDir = os.path.join(runner_config.PROJECT_PATH, 'tests')
+        testsDir = self.testsdir
         errCnt = 0
         for tc in self.testcases:
             relPath = tc['fullname'].replace('.', os.path.sep)+'.py'

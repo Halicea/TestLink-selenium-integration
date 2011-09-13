@@ -21,5 +21,6 @@ name_correction=lambda item:\
 
 TESTS_DIRECTORY = os.path.join(PROJECT_PATH, 'tests')
 DEFAULT_PLAN = os.path.join(PROJECT_PATH, 'testplans', 'a.xml')
+SELENIUM_SERVER_JAR="\"C:/Users/costa/My Documents/Aptana Studio 3 Workspace/SeleniumTesting/selenium_server/start.bat\""
 
 
