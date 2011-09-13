@@ -374,6 +374,8 @@ class EnhancedGUIRunner():
         
         browserFrame = tk.Frame(rightFrame, borderwidth=0)
         browserFrame.pack(side=tk.TOP, anchor=tk.W)
+        browserLabel = tk.Label(browserFrame, text="Test with")
+        browserLabel.pack(side=tk.LEFT, expand=0, anchor=tk.W)
         browserCombo = tk.OptionMenu(browserFrame, self.browserVar, *selenium_config.BROWSERS)
         browserCombo.pack(side=tk.LEFT, expand=1, anchor=tk.W)
         self.browserVar.set(selenium_config.browser)
