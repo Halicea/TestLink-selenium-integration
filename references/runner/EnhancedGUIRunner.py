@@ -253,8 +253,13 @@ class EnhancedGUIRunner():
         try:
             from runner import JoinWriteStream
             from datetime import datetime
-            logfile = os.path.join(runner_config.PROJECT_PATH, 'logs', str(datetime.now().strftime('%Y-%m-%d %H-%M-%S'))+'.log')
+            if not os.path.exists(runner_config.LOGS_DIRECTORY):
+                print 'Creating the Logs Directory:',runner_config.LOGS_DIRECTORY
+                os.makedirs(runner_config.LOGS_DIRECTORY)
+                print 'Logs Directory Created'
+            logfile = os.path.join(runner_config.LOGS_DIRECTORY, str(datetime.now().strftime('%Y-%m-%d %H-%M-%S'))+'.log')
             stream  = JoinWriteStream([open(logfile, 'w')])
+            
             self.runner = runner.TestLinkBuild(
                                testName, 
                                testlinkUpdate=(self.updateTestLinkVar.get() and [True, ] or [False, ])[0], 

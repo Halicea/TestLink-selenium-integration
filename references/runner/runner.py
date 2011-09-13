@@ -280,6 +280,8 @@ def main(*argv):
     stream = JoinWriteStream([])
     if '--log' in [x[0] for x in opts ]:
         log = [x[1] for x in opts if x[0]=='--log'][0]
+        if not os.path.exists(os.path.dirname(log)):
+            os.makedirs(os.path.dirname(log))
         stream.streams.append(open(log, 'w'))
     else:
         stream.streams.append(sys.stderr)
