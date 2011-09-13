@@ -18,11 +18,12 @@ import os
 from os.path import dirname
 import sys
 import unittest
-import selenium_config
 sys.path.append(os.path.join(dirname(dirname(dirname(__file__))), 'references'))
 sys.path.append(os.path.join(dirname(dirname(dirname(__file__))), 'configuration'))
+
 import xml.dom.minidom as md
 import runner_config
+import selenium_config
 from testlink import TestlinkAPIClient
 class TestLinkTestResult(unittest.TestResult):
     """A TestResult that makes callbacks to its associated GUI TestRunner.
@@ -62,13 +63,6 @@ class TestLinkBuild(object):
         print 'Setting up the environment'
         #LOAD THE TESTS from the Directory
         self.testsdir = testsdir or runner_config.TESTS_DIRECTORY
-        if not os.path.exists(self.testsdir):
-            if self.stream:
-                self.stream.write('Tests directory '+self.testsdir+' does not exists, Creating it now...')
-            os.makedirs(self.testsdir)
-            if self.stream:
-                self.stream.write('Tests directory created.')
-
         sys.path.append(self.testsdir)
         from selenium import SeleniumTestCase
         #Setup the browser
@@ -86,6 +80,12 @@ class TestLinkBuild(object):
         
         self.tlupdate = testlinkUpdate
         self.stream = stream
+        if not os.path.exists(self.testsdir):
+            if self.stream:
+                self.stream.write('Tests directory '+self.testsdir+' does not exists, Creating it now...')
+            os.makedirs(self.testsdir)
+            if self.stream:
+                self.stream.write('Tests directory created.')
         self.dom = md.parseString(self.xml)
         self.autoGen = autoGenerate
         self.client = TestlinkAPIClient()
@@ -294,4 +294,4 @@ def main(*argv):
     bld.stream.close()
 if __name__=='__main__':
     main("--testlink", "--autogenerate", "--skip_missing", "--browser=*googlechrome", "--log=C:\\automated.log", "--verbose",runner_config.DEFAULT_PLAN)
-    #main(*sys.argv[1:])
+    main(*sys.argv[1:])

@@ -42,10 +42,6 @@ PARTICULAR PURPOSE.  THE CODE PROVIDED HEREUNDER IS ON AN "AS IS" BASIS,
 AND THERE IS NO OBLIGATION WHATSOEVER TO PROVIDE MAINTENANCE,
 SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
 """
-import selenium_config
-import tkFileDialog
-from Tkconstants import ANCHOR
-
 __author__ = "Costa Halicea Michaylov (costa@halicea.com)"
 __version__ = "$Revision: 1.0 $"
 
@@ -60,7 +56,9 @@ import Queue
 import time
 import runner
 import string
-#sys.path.append(os.path.abspath(os.path.join(os.path.dirname(os.path.dirname(__file__)), 'configuration')))
+import tkFileDialog
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(os.path.dirname(__file__)), 'configuration')))
+import selenium_config
 import runner_config
 tk = Tkinter # Alternative to the messy 'from Tkinter import *' often seen
 
