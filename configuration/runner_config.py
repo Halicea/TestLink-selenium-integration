@@ -19,5 +19,7 @@ name_correction=lambda item:\
    .replace("(",'_')\
    .replace(")",'')
 
-DEFAULT_PLAN = os.path.join(PROJECT_PATH, 'testplans', 'regression.xml')
+TESTS_DIRECTORY = os.path.join(PROJECT_PATH, 'tests')
+DEFAULT_PLAN = os.path.join(PROJECT_PATH, 'testplans', 'a.xml')
+
 

@@ -43,6 +43,7 @@ PARTICULAR PURPOSE.  THE CODE PROVIDED HEREUNDER IS ON AN "AS IS" BASIS,
 AND THERE IS NO OBLIGATION WHATSOEVER TO PROVIDE MAINTENANCE,
 SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
 """
+import selenium_config
 
 __author__ = "Costa Halicea Michaylov (costa@halicea.com)"
 __version__ = "$Revision: 1.0 $"
@@ -83,6 +84,10 @@ class GUITestResult(unittest.TestResult):
     def addFailure(self, test, err):
         unittest.TestResult.addFailure(self, test, err)
         self.callback.notifyTestFailed(test, err)
+    
+    def addSuccess(self, test):
+        unittest.TestResult.addSuccess(self, test)
+        self.callback.notifyTestPassed(test)
 
     def stopTest(self, test):
         unittest.TestResult.stopTest(self, test)
@@ -91,10 +96,6 @@ class GUITestResult(unittest.TestResult):
     def startTest(self, test):
         unittest.TestResult.startTest(self, test)
         self.callback.notifyTestStarted(test)
-    
-    def addSuccess(self, test):
-        unittest.TestResult.addSuccess(self, test)
-        self.callback.notifyTestPassed(test)
 
 class RollbackImporter:
     """This tricky little class is used to make sure that modules under test
@@ -224,6 +225,8 @@ class EnhancedGUIRunner():
         self.updateTestLinkVar=tk.IntVar()
         self.autoGenerateVar = tk.IntVar()
         self.skipMissingVar = tk.IntVar()
+        self.browserVar = tk.StringVar()
+        self.browserVar.set("*chrome")
         self.elapsedVar = tk.StringVar()
         self.elapsedVar.set("0:00")
         self.averageVar = tk.StringVar()
@@ -250,15 +253,21 @@ class EnhancedGUIRunner():
             self.rollbackImporter.rollbackImports()
         self.rollbackImporter = RollbackImporter()
         try:
+            from runner import JoinWriteStream
+            from datetime import datetime
+            logfile = os.path.join(runner_config.PROJECT_PATH, 'logs', str(datetime.now().strftime('%Y-%m-%d %H-%M-%S'))+'.log')
+            stream  = JoinWriteStream([open(logfile, 'w')])
             self.runner = runner.TestLinkBuild(
                                testName, 
                                testlinkUpdate=(self.updateTestLinkVar.get() and [True, ] or [False, ])[0], 
                                autoGenerate=(self.autoGenerateVar.get() and [True, ] or [False, ])[0],
                                skipMissing = (self.skipMissingVar.get() and [True, ] or [False, ])[0],
-                               stream=None,
-                               testResultClass= GUITestResult
+                               stream=stream,
+                               testResultClass= GUITestResult,
+                               testsdir=None, browser=self.browserVar.get()
                                )
             self.runner.testresult = GUITestResult(self)
+            
             self.currentResult = self.runner.testresult
             self.test = self.runner.suite #unittest.defaultTestLoader.loadTestsFromName(testName)
         except:
@@ -286,10 +295,7 @@ class EnhancedGUIRunner():
                 self.showtests(thing)  
     
     def bgRunner(self):   
-        print "start thread"
-        print "actually running"
         self.runner.run()
-        print "done running"
         self.notifyStopped()
         pass
 
@@ -365,6 +371,12 @@ class EnhancedGUIRunner():
                                            variable=self.skipMissingVar)
         skipMissingButton.pack(side=tk.LEFT, expand=0, anchor=tk.W)
         self.skipMissingVar.set(1)
+        
+        browserFrame = tk.Frame(rightFrame, borderwidth=0)
+        browserFrame.pack(side=tk.TOP, anchor=tk.W)
+        browserCombo = tk.OptionMenu(browserFrame, self.browserVar, *selenium_config.BROWSERS)
+        browserCombo.pack(side=tk.LEFT, expand=1, anchor=tk.W)
+        self.browserVar.set(selenium_config.browser)
         
         # Progress bar
         progressFrame = tk.Frame(rightFrame, relief=tk.GROOVE, borderwidth=2)
@@ -475,11 +487,13 @@ class EnhancedGUIRunner():
         self.stopGoButton.config(command=self.runClicked, text="Start")
         self.statusVar.set("Idle")
         self.top.update_idletasks()
+        self.runner.stream.close()
         self.running = 0
         pass
 
     def notifyTestStarted(self, test):
         self.queue.put(TestStartedMessage(test))
+        self.runner.notifyTestStarted(test)
         pass
     
     def setDisplayStatus(self, position, status):
@@ -516,9 +530,8 @@ class EnhancedGUIRunner():
     def notifyTestFailed(self, test, err):
         if self.stopOnErrorVar.get() == 1:
             self.currentResult.stop()
-        if self.updateTestLinkVar.get()==1:
-            self.runner.notifyTestFailed(test, err)
         self.queue.put(TestFailedMessage(test, err))
+        self.runner.notifyTestFailed(test, err)
         pass
     
     def executeTestFailed(self, test, err):
@@ -531,8 +544,7 @@ class EnhancedGUIRunner():
     def notifyTestErrored(self, test, err):
         if self.stopOnErrorVar.get() == 1:
             self.currentResult.stop()
-        if self.updateTestLinkVar.get()==1:
-            self.runner.notifyTestErrored(test, err)
+        self.runner.notifyTestErrored(test, err)
         self.queue.put(TestErroredMessage(test, err))
         pass
     
@@ -545,6 +557,7 @@ class EnhancedGUIRunner():
 
     def notifyTestFinished(self, test):
         self.queue.put(TestFinishedMessage(test))
+        self.runner.notifyTestFinished(test)
         pass
     def notifyTestPassed(self, test):
         self.runner.notifyTestPassed(test)

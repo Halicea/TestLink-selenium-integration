@@ -2,3 +2,4 @@
 *.jar
 testplans/*
 tests
+logs/*

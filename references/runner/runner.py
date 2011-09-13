@@ -18,7 +18,6 @@ import os
 from os.path import dirname
 import sys
 import unittest
-sys.path.append(os.path.join(dirname(dirname(dirname(__file__))), 'tests'))
 sys.path.append(os.path.join(dirname(dirname(dirname(__file__))), 'references'))
 sys.path.append(os.path.join(dirname(dirname(dirname(__file__))), 'configuration'))
 import xml.dom.minidom as md
@@ -55,13 +54,27 @@ class TestLinkTestResult(unittest.TestResult):
 
 class TestLinkBuild(object):
     statuses = {'b':'ERROR', 'f':'FAIL', 'p':'PASS'}
-    def __init__(self, xml=None, testlinkUpdate=False, autoGenerate=False, skipMissing=False, stream = None, testResultClass = TestLinkTestResult,):
+    def __init__(self, xml=None, testlinkUpdate=False, 
+                 autoGenerate=False, skipMissing=False, 
+                 stream = None, testResultClass = TestLinkTestResult,
+                 testsdir=None, browser=None):
+        print 'Setting up the environment'
+        #LOAD THE TESTS from the Directory
+        sys.path.append(testsdir or runner_config.TESTS_DIRECTORY)
+        from selenium import SeleniumTestCase
+        #Setup the browser
+        if browser:
+            SeleniumTestCase.browser = browser
+        #End Setup the browser
+        
+        #Setup the plan
         self.testcases = []
         if not xml:
             self.xml = open(runner_config.DEFAULT_PLAN, 'r').read()
         else:
             self.xml = open(xml, 'r').read()
-            
+        #End Setup the plan
+        
         self.tlupdate = testlinkUpdate
         self.stream = stream
         self.dom = md.parseString(self.xml)
@@ -88,7 +101,10 @@ class TestLinkBuild(object):
                 break
             except:
                 pass
-        print "BuildID", self.buildid
+        if self.stream:
+            self.stream.write("\nTestPlanID: "+str(self.planid))
+            self.stream.write("\nBuildID: "+str(self.buildid))
+            self.stream.write('\n'+('-'*20)+'\n')
     def loadTCs(self):
         tcs = self.dom.getElementsByTagName('testcase')
         for tc in tcs:
@@ -96,7 +112,6 @@ class TestLinkBuild(object):
             keywordsTag= tc.getElementsByTagName('keyword')
             name = runner_config.name_correction(tc.attributes['name'].value)
             fullname = name
-            print tc.attributes
             id = int(tc.attributes['internalid'].value)
             steps = []
             keywords = []
@@ -136,6 +151,7 @@ class TestLinkBuild(object):
             if not os.path.exists(os.path.join(testsDir, tcPath)):
                 missing.append(tc)
         for m in missing:
+            self.stream.write('Removing TC:'+m['fullname'])
             self.testcases.remove(m)
     def createTCs(self):
         testsDir = os.path.join(runner_config.PROJECT_PATH, 'tests')
@@ -150,10 +166,10 @@ class TestLinkBuild(object):
                     f = open(os.path.join(testsDir, relPath), 'w')
                     f.write(self.createEmptyTC(tc))
                     f.close()
+                    self.stream.write('\nCREATED TC:'+os.path.join(testsDir, relPath))
                 except Exception, ex:
                     errCnt+=1
-                    print errCnt, '-', ex
-                    print os.path.join(testsDir, relPath)
+                    self.stream.write('\nERROR CREATING TC:'+os.path.join(testsDir, relPath)+'\nERROR:'+str(errCnt)+' - '+str(ex))
             #recheck if __init__.py are created
             while relDir:
                 initfile = os.path.join(testsDir, relDir, '__init__.py')
@@ -183,7 +199,16 @@ class {{name}}(SeleniumTestCase):
             description += '\n'.join(['\t\t'+x['step']+'\n\t\t\t-'+x['result'] for x in tc['steps']])
         return template.replace("{{name}}", tc['name']).replace("{{description}}", description and description or 'Add description here')            
     def run(self):
+        self.stream.write('*****RUNNING*****\n')
         self.testresult = self.suite.run(self.testresult)
+        self.stream.write('*****FINISHED*****\n')
+        self.writeResult()
+    def writeResult(self):
+        self.stream.write('Total: '+ str(self.testresult.testsRun))
+        self.stream.write('\nPassed: '+ str(self.testresult.testsRun - len(self.testresult.failures)-len(self.testresult.errors)))
+        self.stream.write('\nFailiures: '+ str(len(self.testresult.failures)))
+        self.stream.write('\nErrors: '+ str(len(self.testresult.errors)))
+
         #print res
     def sendStatus(self, test, status, message=None):
         tc = None
@@ -212,25 +237,52 @@ class {{name}}(SeleniumTestCase):
             self.stream.write('\n')
     def notifyTestStarted(self, test):
         if self.stream:
-            self.stream.write(str(test)+':')
-
+            self.stream.write(str(test))
+            self.stream.write('\n\tResult:')
+class JoinWriteStream(object):
+    def __init__(self, streams):
+        self.streams= streams
+    def write(self, str):
+        for s in self.streams:
+            s.write(str)
+    def close(self):
+        for s in self.streams:
+            s.close()
 def main(*argv):
     xml=None
     if(argv):
-        opts, args =  getopt.getopt(argv, None, ["planbased", "tcbased", "testlink", "autogenerate", "skip_missing"])
+        opts, args =  getopt.getopt(argv, None,["verbose", "planbased", "tcbased", "testlink", "autogenerate", "skip_missing", "log=", "testsdir=", "browser="])
         xml = args[0]
     testlinkUpdate = False
     autogenerate = False
     skip_missing = False
+    testsdir = None
+    browser =None
     if '--testlink' in [x[0] for x in opts ]:
         testlinkUpdate = True
     if '--autogenerate' in [x[0] for x in opts ]:
         autogenerate = True
     if '--skip_missing' in [x[0] for x in opts ]:
         skip_missing = True
-    bld = TestLinkBuild(xml, testlinkUpdate=testlinkUpdate, autoGenerate=autogenerate, stream=sys.stderr, skipMissing=skip_missing)
+    if '--testsdir' in [x[0] for x in opts ]:
+        testsdir = [x[1] for x in opts if x[0]=='--testsdir'][0]
+    if '--browser' in [x[0] for x in opts ]:
+        testsdir = [x[1] for x in opts if x[0]=='--browser'][0]
+    stream = JoinWriteStream([])
+    if '--log' in [x[0] for x in opts ]:
+        log = [x[1] for x in opts if x[0]=='--log'][0]
+        stream.streams.append(open(log, 'w'))
+    else:
+        stream.streams.append(sys.stderr)
+    if '--verbose' in [x[0] for x in opts ]:
+        if sys.stderr not in stream.streams:
+            stream.streams.append(sys.stderr)
+    
+    bld = TestLinkBuild(xml, testlinkUpdate=testlinkUpdate, autoGenerate=autogenerate, 
+                        stream=stream, skipMissing=skip_missing,
+                        testsdir=testsdir, browser=browser)
     bld.run()
     bld.stream.close()
 if __name__=='__main__':
-    #main("--testlink", "--autogenerate", "--skip_missing", runner_config.DEFAULT_PLAN)
-    main(*sys.argv[1:])
+    main("--testlink", "--autogenerate", "--skip_missing", "--browser=*googlechrome", "--log=C:\\automated.log", "--verbose",runner_config.DEFAULT_PLAN)
+    #main(*sys.argv[1:])
